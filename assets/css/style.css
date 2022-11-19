@@ -24,3 +24,9 @@ body{
     background-color: cadetblue;
 }
 
+#game-table td{
+    padding:30px;
+}
+
+
+
