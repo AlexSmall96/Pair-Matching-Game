@@ -12,24 +12,19 @@ body{
     margin-right:auto;
 }
 
-#game-area{
-    width:50%;
-    height:300px;
-    background-color:lightgrey;
-}
-
-#score-area{
-    width:25%;
-    height:25px;
-    background-color: cadetblue;
-}
 
 #game-table td{
-    padding:30px;
+    padding:40px;
     background-color:cadetblue;
     border: 2px solid;
     border-radius: 30%;
 }
+
+#score-area .fa-solid{
+    padding:30px;
+}
+
+
 
 
 
