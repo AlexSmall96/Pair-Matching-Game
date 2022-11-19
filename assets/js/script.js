@@ -15,13 +15,14 @@ document.addEventListener("DOMContentLoaded", function() {
                card.innerHTML=`<i class="fa-2xl fa-solid fa-${itemName}"></i>`;
                input.push(itemName);
                //If cards selected match
-               if (input[0]===input[1]){
-                //Add item to found items//
-                let foundItem = document.getElementById(`found-${itemName}`)
-                foundItem.innerHTML=`<i class="fa-2xl fa-solid fa-${itemName}"></i>`;
-                itemsFound++;
-                console.log(itemsFound);
-               }
+               if (input.length===2){
+                  if (input[0]===input[1]){
+                  //Add item to found items//
+                  let foundItem = document.getElementById(`found-${itemName}`)
+                  foundItem.innerHTML=`<i class="fa-2xl fa-solid fa-${itemName}"></i>`;
+                  itemsFound++;
+                  }
+                }
                if (input.length === 2){
                 //If two attempts made reset input to empty array//
                   input =[];
