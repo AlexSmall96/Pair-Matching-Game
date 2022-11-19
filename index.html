@@ -4,22 +4,25 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="assets/css/style.css">
+
     <title>Document</title>
 </head>
 <body>
     <h1>Pair Matching Game</h1>
-    <div id="settings-area">
+    <div class="vertical-margin horizontal-margin-single" id="settings-area">
       <button id="normal">Normal</button>
       <button id="hard">Hard</button>
       <button id="go">Play!</button>
     </div>
-    <div id="game-area">
+    <div class="vertical-margin horizontal-margin-single" id="game-area">
 
     </div>
 
-    <div id="score-area">
-        <span id="found"></span>
-        <span id="remaining"></span>
+    <div class="vertical-margin horizontal-margin-single" id="score-area">
+        <span id="found">Found: </span><span id="found-score">0</span>
+        <span id="remaining">Remaining: </span><span id="remaining-score">5</span>
     </div>
 </body>
 </html>
