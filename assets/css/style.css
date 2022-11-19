@@ -15,7 +15,7 @@ body{
 #game-area{
     width:50%;
     height:300px;
-    background-color:grey;
+    background-color:lightgrey;
 }
 
 #score-area{
@@ -26,6 +26,9 @@ body{
 
 #game-table td{
     padding:30px;
+    background-color:cadetblue;
+    border: 2px solid;
+    border-radius: 30%;
 }
 
 
