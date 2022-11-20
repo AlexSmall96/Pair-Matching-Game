@@ -1,6 +1,7 @@
 document.addEventListener("DOMContentLoaded", function() {
     //Add event listener to play button//
-    let input=[];
+    let inputId=[];
+    let inputName=[];
     let itemsFound=0;
     let playButton = document.getElementById("new-game");
     playButton.addEventListener("click", newGame);
@@ -9,18 +10,24 @@ document.addEventListener("DOMContentLoaded", function() {
     for (let card of cards){
         card.addEventListener('click', function(){
             //If less than two cards are currently chosen//
-            if (input.length<2){
-               let itemName=this.id;
+            if (inputId.length<2){
+               //store id//
+               let item=this.id;
+               //store item name without unique number on end//
+               let itemName=item.slice(0,item.length-2);
                //Turn card over to show item//
                card.innerHTML=`<i class="fa-2xl fa-solid fa-${itemName}"></i>`;
-               input.push(itemName);
+               inputId.push(item);
+               inputName.push(itemName)
                //If cards selected match
-               if (input.length===2){
-                  if (input[0]===input[1]){
+               if (inputId.length===2){
+                  if (inputName[0]===inputName[1]){
                   //Add item to found items//
                   let foundItem = document.getElementById(`found-${itemName}`)
                   foundItem.innerHTML=`<i class="fa-2xl fa-solid fa-${itemName}"></i>`;
                   itemsFound++;
+                  inputId=[];
+                  inputName=[];
                   }
                 }
             }
@@ -30,18 +37,18 @@ document.addEventListener("DOMContentLoaded", function() {
     let guessAgain=document.getElementById('guess-again');
     guessAgain.addEventListener('click',function(){
         //Check if two cards have been selected//
-        if (input.length ===2){
-            console.log('2')
+        if (inputId.length ===2){
             //Check if cards dont match//
-            if (input[0]!==input[1]){
-                console.log('wrong')
+            if (inputName[0]!==inputName[1]){
                 //Turn cards back over//
-                document.getElementById(input[0]).innerHTML=
+                document.getElementById(inputId[0]).innerHTML=
                 `<i class="fa-2xl fa-solid fa-question"></i>`;
-                document.getElementById(input[1]).innerHTML=
+                document.getElementById(inputId[1]).innerHTML=
                 `<i class="fa-2xl fa-solid fa-question"></i>`;
             }
-        }
+        } 
+        inputId=[];
+        inputName=[];
     })
 });
 
