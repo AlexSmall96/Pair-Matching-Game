@@ -4,6 +4,7 @@ document.addEventListener("DOMContentLoaded", function() {
     let inputId=[];
     let inputName=[];
     let itemsFound=0;
+    let promptArea=document.getElementById('prompt-area');
     let playButton = document.getElementById("new-game");
     playButton.addEventListener("click", newGame);
     //Add event listeners to cards//
@@ -28,36 +29,43 @@ document.addEventListener("DOMContentLoaded", function() {
                   foundItem.innerHTML=`<i class="fa-2xl fa-solid fa-${itemName}"></i>`;
                   //Increase score
                   itemsFound++;
+                  //Show well done message//
+                  if (noItems-itemsFound>1){
+                    promptArea.innerHTML=`<p>Well done! ${noItems-itemsFound} items left to find.</p>`
+                  } else if (noItems-itemsFound==1){
+                    promptArea.innerHTML=`<p>Well done! 1 item left to find.</p>`
+                  } else {promptArea.innerHTML=`<p>Well done! All items found.</p>`}
+                  
                   inputId=[];
                   inputName=[];
-                  }
-                  else {
-                    document.getElementById('guess-again').style.backgroundColor='green';
-                    document.getElementById('guess-again').style.width='25%';
+                  } else{
+                    //Let button appear to guess again//
+                    promptArea.innerHTML='<button id="guess-again">Guess Again</button>'
+                    let guessAgain=document.getElementById('guess-again');
+                    guessAgain.addEventListener('click',function(){
+                        //Check if two cards have been selected//
+                        if (inputId.length ===2){
+                            //Check if cards dont match//
+                            if (inputName[0]!==inputName[1]){
+                                //Turn cards back over//
+                                document.getElementById(inputId[0]).innerHTML=
+                                `<i class="fa-2xl fa-solid fa-question"></i>`;
+                                document.getElementById(inputId[1]).innerHTML=
+                                `<i class="fa-2xl fa-solid fa-question"></i>`;
+                            }
+                        } 
+                        inputId=[];
+                        inputName=[];
+                        //Make button dissapear after it is clicked//
+                        promptArea.innerHTML='<p>...</p>'
+                    })
                   }
                 }
             }
         });
     }
     
-    let guessAgain=document.getElementById('guess-again');
-    guessAgain.addEventListener('click',function(){
-        guessAgain.style.backgroundColor='lightgrey';
-        guessAgain.style.width='10%';
-        //Check if two cards have been selected//
-        if (inputId.length ===2){
-            //Check if cards dont match//
-            if (inputName[0]!==inputName[1]){
-                //Turn cards back over//
-                document.getElementById(inputId[0]).innerHTML=
-                `<i class="fa-2xl fa-solid fa-question"></i>`;
-                document.getElementById(inputId[1]).innerHTML=
-                `<i class="fa-2xl fa-solid fa-question"></i>`;
-            }
-        } 
-        inputId=[];
-        inputName=[];
-    })
+   
     
 });
 

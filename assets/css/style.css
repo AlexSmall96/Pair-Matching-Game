@@ -24,6 +24,17 @@ body{
     padding:30px;
 }
 
+#prompt-area{
+    height:50px;
+    border-color: grey;
+    border-style: solid;
+    width:12%;
+    border-radius: 40%;
+}
+
+#guess-again{
+    margin:15px;
+}
 
 
 
