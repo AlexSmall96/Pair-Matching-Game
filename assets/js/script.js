@@ -5,6 +5,7 @@ document.addEventListener("DOMContentLoaded", function() {
     let noAttemptsHard=5;
     let attemptsLeft=noAttemptsEasy;
     let hardModeOn=false;
+    let hardSwitchFrozen=false;
     let inputId=[];
     let inputName=[];
     let itemsFound=0;
@@ -44,17 +45,37 @@ document.addEventListener("DOMContentLoaded", function() {
         itemsFound=0;
         promptArea.innerHTML=`<p>Pick a Card!</p>`
        gameInProgress=true;
+       if (!hardSwitchFrozen){
        if (hardModeOn){document.getElementById('hard-mode').innerHTML=
        `<h4>Hard Mode</h4>
        <div class="frozen-on vertical-margin horizontal-margin-single">
        <p>  ON</p>
-       </div>`}
+       </div>`; }
        else { document.getElementById('hard-mode').innerHTML=
        `<h4>Hard Mode</h4>
        <div class="frozen-off vertical-margin horizontal-margin-single">
        <p>  OFF</p>
        </div>`}
-     
+       hardSwitchFrozen=true;
+       } else if (!hardModeOn) {
+        document.getElementById('hard-mode').innerHTML=
+        `<h4>Hard Mode</h4>
+        <input type="checkbox" id="switch"
+        class="checkbox" />
+        <label for="switch" class="toggle">
+        <p>ON      OFF</p>
+        </label>`
+        hardSwitchFrozen=false;
+       } else {
+        document.getElementById('hard-mode').innerHTML=
+        `<h4>Hard Mode</h4>
+        <input type="checkbox" id="switch"
+        class="checkbox" />
+        <label for="switch" class="toggle">
+        <p>ON      OFF</p>
+        </label>`
+        hardSwitchFrozen=false;
+       }
     });
 
     //Add event listeners to cards//
