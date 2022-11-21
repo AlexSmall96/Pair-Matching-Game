@@ -3,6 +3,7 @@ document.addEventListener("DOMContentLoaded", function() {
     let noItems=4;
     let noAttemptsEasy=10;
     let noAttemptsHard=5;
+    let attemptsLeft=noAttemptsEasy;
     let inputId=[];
     let inputName=[];
     let itemsFound=0;
@@ -13,9 +14,11 @@ document.addEventListener("DOMContentLoaded", function() {
             let hardModeOn=this.checked;
             if (hardModeOn){
                 document.getElementById('attempts-left').innerHTML=`${noAttemptsHard}`;
-            } else 
+                attemptsLeft=noAttemptsHard;
+            } else {
                 document.getElementById('attempts-left').innerHTML=`${noAttemptsEasy}`;
-        }
+                attemptsLeft=noAttemptsEasy;}
+            }       
         })
         
     
@@ -29,6 +32,8 @@ document.addEventListener("DOMContentLoaded", function() {
     let cards = document.getElementsByClassName('card');
     for (let card of cards){
         card.addEventListener('click', function(){
+            //Only let the user click if attempts are left
+            if (attemptsLeft>0){
             //Only let the user click on a card if it hasn't been turned over//
             if (card.innerHTML==='<i class="fa-2xl fa-solid fa-question"></i>'){
             //If less than two cards are currently chosen//
@@ -43,9 +48,12 @@ document.addEventListener("DOMContentLoaded", function() {
                inputName.push(itemName)
                //If cards selected match
                if (inputId.length===2){
-                  document.getElementById('attempts-left').innerHTML -=1;
+                  attemptsLeft -=1;
+                  document.getElementById('attempts-left').innerHTML =attemptsLeft;
                   if (inputName[0]===inputName[1]){
                   //Add item to found items//
+                  attemptsLeft -=1;
+                  document.getElementById('attempts-left').innerHTML =attemptsLeft;
                   let foundItem = document.getElementById(`found-${itemName}`)
                   foundItem.innerHTML=`<i class="fa-2xl fa-solid fa-${itemName}"></i>`;
                   //Increase score
@@ -62,7 +70,7 @@ document.addEventListener("DOMContentLoaded", function() {
                   
                   inputId=[];
                   inputName=[];
-                  } else{
+                  } else if (attemptsLeft>0){
                     //Let button appear to guess again//
                     promptArea.innerHTML='<button id="guess-again">Guess Again</button>'
                     let guessAgain=document.getElementById('guess-again');
@@ -78,18 +86,23 @@ document.addEventListener("DOMContentLoaded", function() {
                                 `<i class="fa-2xl fa-solid fa-question"></i>`;
                             }
                         } 
+                        
                         inputId=[];
                         inputName=[];
                         //Make button dissapear after it is clicked//
                         promptArea.innerHTML='<p>...</p>'
+                       
                     })
-                  }
+                  } else {promptArea.innerHTML='<p>Sorry, you ran out of guesses.</p>';
+                          gameInProgress=false;
+                }
                 }
             }
         }
+        }
         });
     }
-    //Add event listener to hard mode toggle//
+    
     
 
    
