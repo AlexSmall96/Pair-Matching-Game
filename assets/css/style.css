@@ -81,3 +81,19 @@ body{
     .checkbox {
         display : none;
     }
+
+.frozen-off, .frozen-on{
+        width: 100px;
+        height: 50px;
+        border-radius: 30px;
+        border: 2px solid gray;
+}
+
+.frozen-on{
+    background-color: red;
+}
+
+.frozen-off{
+    background-color:green;
+}
+

@@ -44,13 +44,17 @@ document.addEventListener("DOMContentLoaded", function() {
         itemsFound=0;
         promptArea.innerHTML=`<p>Pick a Card!</p>`
        gameInProgress=true;
-      document.getElementById('hard-mode').innerHTML=
-      `<h4>Hard Mode</h4>
-      <input id="switch"
-      class="checkbox" />
-      <label for="switch" class="toggle">
-      <p>ON    OFF</p>
-      </label>`
+       if (hardModeOn){document.getElementById('hard-mode').innerHTML=
+       `<h4>Hard Mode</h4>
+       <div class="frozen-on vertical-margin horizontal-margin-single">
+       <p>  ON</p>
+       </div>`}
+       else { document.getElementById('hard-mode').innerHTML=
+       `<h4>Hard Mode</h4>
+       <div class="frozen-off vertical-margin horizontal-margin-single">
+       <p>  OFF</p>
+       </div>`}
+     
     });
 
     //Add event listeners to cards//
