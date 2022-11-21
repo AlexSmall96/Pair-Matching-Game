@@ -4,6 +4,7 @@ document.addEventListener("DOMContentLoaded", function() {
     let noAttemptsEasy=10;
     let noAttemptsHard=5;
     let attemptsLeft=noAttemptsEasy;
+    let hardModeOn=false;
     let inputId=[];
     let inputName=[];
     let itemsFound=0;
@@ -11,7 +12,7 @@ document.addEventListener("DOMContentLoaded", function() {
     let hardSwitch=document.getElementById('switch');
     hardSwitch.addEventListener('change',function(){
         if (!gameInProgress){
-            let hardModeOn=this.checked;
+                hardModeOn=this.checked;
             if (hardModeOn){
                 document.getElementById('attempts-left').innerHTML=`${noAttemptsHard}`;
                 attemptsLeft=noAttemptsHard;
@@ -26,12 +27,38 @@ document.addEventListener("DOMContentLoaded", function() {
 
     let playButton = document.getElementById("new-game");
     playButton.addEventListener("click", function(){
-        gameInProgress=true;
+    for (let card of cards){
+        //Turn all cards over
+        card.innerHTML=`<i class="fa-2xl fa-solid fa-question"></i>`;
+        //Reset found items
+        let foundItem = document.getElementById(`found-${(card.id).slice(0,(card.id).length-2)}`)
+        foundItem.innerHTML=`<i class="fa-2xl fa-solid fa-question"></i>`;
+        }     
+        //Reset attempts left
+        if (hardModeOn){
+            attemptsLeft=noAttemptsHard;
+        } else {attemptsLeft=noAttemptsEasy;}
+        document.getElementById('attempts-left').innerHTML =attemptsLeft;
+        inputId=[];
+        inputName=[];
+        itemsFound=0;
+        promptArea.innerHTML=`<p>Pick a Card!</p>`
+       gameInProgress=true;
+      document.getElementById('hard-mode').innerHTML=
+      `<h4>Hard Mode</h4>
+      <input id="switch"
+      class="checkbox" />
+      <label for="switch" class="toggle">
+      <p>ON    OFF</p>
+      </label>`
     });
+
     //Add event listeners to cards//
     let cards = document.getElementsByClassName('card');
     for (let card of cards){
         card.addEventListener('click', function(){
+            //Only let the user click if New game button has been clicked//
+            if (gameInProgress){
             //Only let the user click if attempts are left
             if (attemptsLeft>0){
             //Only let the user click on a card if it hasn't been turned over//
@@ -98,6 +125,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 }
                 }
             }
+        }
         }
         }
         });
