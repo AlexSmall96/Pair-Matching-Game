@@ -1,12 +1,30 @@
 document.addEventListener("DOMContentLoaded", function() {
     //Add event listener to play button//
-    let noItems=3;
+    let noItems=4;
+    let noAttemptsEasy=10;
+    let noAttemptsHard=5;
     let inputId=[];
     let inputName=[];
     let itemsFound=0;
+    let gameInProgress=false;
+    let hardSwitch=document.getElementById('switch');
+    hardSwitch.addEventListener('change',function(){
+        if (!gameInProgress){
+            let hardModeOn=this.checked;
+            if (hardModeOn){
+                document.getElementById('attempts-left').innerHTML=`${noAttemptsHard}`;
+            } else 
+                document.getElementById('attempts-left').innerHTML=`${noAttemptsEasy}`;
+        }
+        })
+        
+    
     let promptArea=document.getElementById('prompt-area');
+
     let playButton = document.getElementById("new-game");
-    playButton.addEventListener("click", newGame);
+    playButton.addEventListener("click", function(){
+        gameInProgress=true;
+    });
     //Add event listeners to cards//
     let cards = document.getElementsByClassName('card');
     for (let card of cards){
@@ -25,6 +43,7 @@ document.addEventListener("DOMContentLoaded", function() {
                inputName.push(itemName)
                //If cards selected match
                if (inputId.length===2){
+                  document.getElementById('attempts-left').innerHTML -=1;
                   if (inputName[0]===inputName[1]){
                   //Add item to found items//
                   let foundItem = document.getElementById(`found-${itemName}`)
@@ -36,7 +55,10 @@ document.addEventListener("DOMContentLoaded", function() {
                     promptArea.innerHTML=`<p>Well done! ${noItems-itemsFound} items left to find.</p>`
                   } else if (noItems-itemsFound==1){
                     promptArea.innerHTML=`<p>Well done! 1 item left to find.</p>`
-                  } else {promptArea.innerHTML=`<p>Well done! All items found.</p>`}
+                  } else {
+                    promptArea.innerHTML=`<p>Well done! All items found.</p>`
+                    gameInProgress=false;
+                         }
                   
                   inputId=[];
                   inputName=[];
@@ -67,7 +89,9 @@ document.addEventListener("DOMContentLoaded", function() {
         }
         });
     }
+    //Add event listener to hard mode toggle//
     
+
    
     
 });

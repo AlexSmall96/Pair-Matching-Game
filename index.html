@@ -13,29 +13,37 @@
     <h1>Pair Matching Game</h1>
     
     <div class="vertical-margin horizontal-margin-single">
-        <h4>Choose Difficulity</h4>
-      <button id="normal">Normal</button>
-      <button id="hard">Hard</button>
-      
+        <h4>Hard Mode</h4>
+        <input type="checkbox" id="switch"
+        class="checkbox" />
+<label for="switch" class="toggle">
+ 
+
+<p>ON    OFF</p>
+
+
+</label>
     </div>
     <div class="vertical-margin horizontal-margin-single">
         <button id="new-game">New Game</button>
     </div>
-
+    
     <div id="prompt-area" class="vertical-margin horizontal-margin-single">
         <p>Pick a Card!</p>
     </div>
-    
+
     <div>
         <table id="game-table" class ="horizontal-margin-single">
             <tr>
                 <td id="pizza-slice-0" class="card"><i class="fa-2xl fa-solid fa-question"></i></td>
                 <td id="mug-hot-0" class="card"><i class="fa-2xl fa-solid fa-question"></i></td>
                 <td id="burger-0" class="card"><i class="fa-2xl fa-solid fa-question"></i></td>
+                <td id="cat-0" class="card"><i class="fa-2xl fa-solid fa-question"></i></td>
             </tr>
             <tr>
                 <td id="mug-hot-1" class="card"><i class="fa-2xl fa-solid fa-question"></i></td>
                 <td id="burger-1" class="card"><i class="fa-2xl fa-solid fa-question"></i></td>
+                <td id="cat-1" class="card"><i class="fa-2xl fa-solid fa-question"></i></td>
                 <td id="pizza-slice-1" class="card"><i class="fa-2xl fa-solid fa-question"></i></td>
             </tr>
         </table>
@@ -50,8 +58,12 @@
         <span id="found-pizza-slice"><i class="fa-2xl fa-solid fa-question"></i></span>
         <span id="found-mug-hot"><i class="fa-2xl fa-solid fa-question"></i></span>
         <span id="found-burger"><i class="fa-2xl fa-solid fa-question"></i></span>
+        <span id="found-cat"><i class="fa-2xl fa-solid fa-question"></i></span>
     </div>
     <script src="https://kit.fontawesome.com/19e39a1d6d.js" crossorigin="anonymous"></script>
     <script src="assets/js/script.js"></script>
+   <div class="vertical-margin horizontal-margin-single">
+    <span>Attempts Left: </span><span id="attempts-left">10</span>
+   </div>
 </body>
 </html>
