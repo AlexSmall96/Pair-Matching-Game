@@ -11,6 +11,8 @@ document.addEventListener("DOMContentLoaded", function() {
     let cards = document.getElementsByClassName('card');
     for (let card of cards){
         card.addEventListener('click', function(){
+            //Only let the user click on a card if it hasn't been turned over//
+            if (card.innerHTML==='<i class="fa-2xl fa-solid fa-question"></i>'){
             //If less than two cards are currently chosen//
             if (inputId.length<2){
                //store id//
@@ -62,6 +64,7 @@ document.addEventListener("DOMContentLoaded", function() {
                   }
                 }
             }
+        }
         });
     }
     
