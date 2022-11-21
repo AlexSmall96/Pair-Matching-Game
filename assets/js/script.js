@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", function() {
     //Add event listener to play button//
-    let noItems=4;
+    let noItems=5;
     let noAttemptsEasy=10;
     let noAttemptsHard=5;
     let attemptsLeft=noAttemptsEasy;
