@@ -1,85 +1,66 @@
 document.addEventListener("DOMContentLoaded", function() {
-    //Add event listener to play button//
-    let noItems=5;
-    let noAttemptsEasy=10;
+    //Count number of items
+    const cards = document.getElementsByClassName('card');
+    //Define object of items to map number to card id
+    const keys=[1,2,3,4,5,6,7,8,9,10,11,12];
+    const items={
+        1:'pizza-slice-0',
+        2:'pizza-slice-1',
+        3:'mug-hot-0',
+        4:'mug-hot-1',
+        5:'burger-0',
+        6:'burger-1',
+        7:'cat-0',
+        8:'cat-1',
+        9:'motorcycle-0',
+        10:'motorcycle-1',
+        11:'cake-candles-0',
+        12:'cake-candles-1'
+        };
+    let noItems=cards.length*0.5;
+    let noAttemptsEasy=20;
     let noAttemptsHard=5;
     let attemptsLeft=noAttemptsEasy;
     let hardModeOn=false;
-    let hardSwitchFrozen=false;
     let inputId=[];
     let inputName=[];
     let itemsFound=0;
     let gameInProgress=false;
-    let hardSwitch=document.getElementById('switch');
-    hardSwitch.addEventListener('change',function(){
-        if (!gameInProgress){
-                hardModeOn=this.checked;
-            if (hardModeOn){
-                document.getElementById('attempts-left').innerHTML=`${noAttemptsHard}`;
-                attemptsLeft=noAttemptsHard;
-            } else {
-                document.getElementById('attempts-left').innerHTML=`${noAttemptsEasy}`;
-                attemptsLeft=noAttemptsEasy;}
-            }       
-        })
         
     
     let promptArea=document.getElementById('prompt-area');
-
+  
     let playButton = document.getElementById("new-game");
+    //shuffle cards//
     playButton.addEventListener("click", function(){
+    let shuffledKeys=shuffleCards(keys);
+
+    cards[0].id=items[shuffledKeys[0]];
+    keyIndex=0;
     for (let card of cards){
         //Turn all cards over
-        card.innerHTML=`<i class="fa-2xl fa-solid fa-question"></i>`;
+        card.innerHTML=`<i class="fa-2xl fa-solid fa-question"></i>`
+        //Shuffle cards//
+        card.id=items[shuffledKeys[keyIndex]];
+        console.log(cards);
+        keyIndex++;
         //Reset found items
         let foundItem = document.getElementById(`found-${(card.id).slice(0,(card.id).length-2)}`)
         foundItem.innerHTML=`<i class="fa-2xl fa-solid fa-question"></i>`;
         }     
         //Reset attempts left
-        if (hardModeOn){
-            attemptsLeft=noAttemptsHard;
-        } else {attemptsLeft=noAttemptsEasy;}
+        
+        attemptsLeft=noAttemptsEasy;
         document.getElementById('attempts-left').innerHTML =attemptsLeft;
         inputId=[];
         inputName=[];
         itemsFound=0;
         promptArea.innerHTML=`<p>Pick a Card!</p>`
        gameInProgress=true;
-       if (!hardSwitchFrozen){
-       if (hardModeOn){document.getElementById('hard-mode').innerHTML=
-       `<h4>Hard Mode</h4>
-       <div class="frozen-on vertical-margin horizontal-margin-single">
-       <p>  ON</p>
-       </div>`; }
-       else { document.getElementById('hard-mode').innerHTML=
-       `<h4>Hard Mode</h4>
-       <div class="frozen-off vertical-margin horizontal-margin-single">
-       <p>  OFF</p>
-       </div>`}
-       hardSwitchFrozen=true;
-       } else if (!hardModeOn) {
-        document.getElementById('hard-mode').innerHTML=
-        `<h4>Hard Mode</h4>
-        <input type="checkbox" id="switch"
-        class="checkbox" />
-        <label for="switch" class="toggle">
-        <p>ON      OFF</p>
-        </label>`
-        hardSwitchFrozen=false;
-       } else {
-        document.getElementById('hard-mode').innerHTML=
-        `<h4>Hard Mode</h4>
-        <input type="checkbox" id="switch"
-        class="checkbox" />
-        <label for="switch" class="toggle">
-        <p>ON      OFF</p>
-        </label>`
-        hardSwitchFrozen=false;
-       }
     });
 
     //Add event listeners to cards//
-    let cards = document.getElementsByClassName('card');
+    
     for (let card of cards){
         card.addEventListener('click', function(){
             //Only let the user click if New game button has been clicked//
@@ -161,6 +142,20 @@ document.addEventListener("DOMContentLoaded", function() {
    
     
 });
+
+function shuffleCards(keys){
+    let shuffledKeys =[];
+    let noKeys=keys.length
+    let noKeysRemaining=noKeys;
+    for (i=1;i<noKeys;i++){
+        let r=Math.floor(noKeysRemaining*Math.random());
+        shuffledKeys.push(keys[r])
+        keys.splice(r,1);
+        noKeysRemaining -=1;
+    }
+    shuffledKeys.push(keys[0])
+    return shuffledKeys  
+}
 
 function newGame(){ 
     //turns all cards over

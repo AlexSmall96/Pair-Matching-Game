@@ -10,20 +10,23 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>Pair Matching Game</h1>
+    <div id="home-page">
+        <h1>Pair Matching Game</h1>
+        <div id="about">Information about the game, health benefits of memory games</div>
+        <div id="instructions"><h2>Instructions</h2>Instructions here, what each button does, game rules etc.</div>
+        <div class="vertical-margin horizontal-margin-single">
+            <h3>Ready to Play?</h3>
+            <label for="username">Enter Username: </label>
+            <input type="text" name="username">
+            <p>Select Difficulty: <button>Normal</button>
+                <button>Hard</button></p></div>
+        
+            <div class="vertical-margin horizontal-margin-single">
+                <button id="new-game">Start Game</button>
+            </div>
+    </div>
+    <div id="game-page">
     
-    <div class="vertical-margin horizontal-margin-single" id="hard-mode">
-        <h4>Hard Mode</h4>
-        <input type="checkbox" id="switch"
-        class="checkbox" />
-        <label for="switch" class="toggle">
-        <p>ON      OFF</p>
-        </label>
-    </div>
-
-    <div class="vertical-margin horizontal-margin-single">
-        <button id="new-game">New Game</button>
-    </div>
     
     <div id="prompt-area" class="vertical-margin horizontal-margin-single">
         <p>Pick a Card!</p>
@@ -32,16 +35,22 @@
     <div>
         <table id="game-table" class ="horizontal-margin-single">
             <tr>
-                <td id="pizza-slice-0" class="card"><i class="fa-2xl fa-solid fa-question"></i></td>
                 <td id="mug-hot-0" class="card"><i class="fa-2xl fa-solid fa-question"></i></td>
                 <td id="burger-0" class="card"><i class="fa-2xl fa-solid fa-question"></i></td>
-                <td id="cat-0" class="card"><i class="fa-2xl fa-solid fa-question"></i></td>
+                <td id="motorcycle-0" class="card"><i class="fa-2xl fa-solid fa-question"></i></td>
+                <td id="cake-candles-0" class="card"><i class="fa-2xl fa-solid fa-question"></i></td>
+            </tr>
+            <tr>
+                <td id="cake-candles-1" class="card"><i class="fa-2xl fa-solid fa-question"></i></td>
+                <td id="cat-1" class="card"><i class="fa-2xl fa-solid fa-question"></i></td>
+                <td id="pizza-slice-1" class="card"><i class="fa-2xl fa-solid fa-question"></i></td>
+                <td id="motorcycle-1" class="card"><i class="fa-2xl fa-solid fa-question"></i></td>
             </tr>
             <tr>
                 <td id="mug-hot-1" class="card"><i class="fa-2xl fa-solid fa-question"></i></td>
+                <td id="cat-0" class="card"><i class="fa-2xl fa-solid fa-question"></i></td>
                 <td id="burger-1" class="card"><i class="fa-2xl fa-solid fa-question"></i></td>
-                <td id="cat-1" class="card"><i class="fa-2xl fa-solid fa-question"></i></td>
-                <td id="pizza-slice-1" class="card"><i class="fa-2xl fa-solid fa-question"></i></td>
+                <td id="pizza-slice-0" class="card"><i class="fa-2xl fa-solid fa-question"></i></td>
             </tr>
         </table>
     </div>
@@ -52,15 +61,24 @@
     
     <div class="vertical-margin horizontal-margin-single" id="score-area">
         <span>Items Found:</span>
-        <span id="found-pizza-slice"><i class="fa-2xl fa-solid fa-question"></i></span>
-        <span id="found-mug-hot"><i class="fa-2xl fa-solid fa-question"></i></span>
-        <span id="found-burger"><i class="fa-2xl fa-solid fa-question"></i></span>
-        <span id="found-cat"><i class="fa-2xl fa-solid fa-question"></i></span>
+        <table class="vertical-margin horizontal-margin-single" id="found-table">
+        <tr>
+        <td id="found-pizza-slice"><i class="fa-2xl fa-solid fa-question"></i></td>
+        <td id="found-mug-hot"><i class="fa-2xl fa-solid fa-question"></i></td>
+        <td id="found-burger"><i class="fa-2xl fa-solid fa-question"></i></td>
+        </tr>
+        <tr>
+        <td id="found-cat"><i class="fa-2xl fa-solid fa-question"></i></td>
+        <td id="found-motorcycle"><i class="fa-2xl fa-solid fa-question"></i></td>
+        <td id="found-cake-candles"><i class="fa-2xl fa-solid fa-question"></i></td>
+        </tr>
+    </table>
     </div>
     <script src="https://kit.fontawesome.com/19e39a1d6d.js" crossorigin="anonymous"></script>
     <script src="assets/js/script.js"></script>
    <div class="vertical-margin horizontal-margin-single">
-    <span>Attempts Left: </span><span id="attempts-left">10</span>
+    <span>Attempts Left: </span><span id="attempts-left">20</span>
    </div>
+</div>
 </body>
 </html>
