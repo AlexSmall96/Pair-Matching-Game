@@ -2,21 +2,8 @@ document.addEventListener("DOMContentLoaded", function() {
     //Count number of items
     const cards = document.getElementsByClassName('card');
     //Define object of items to map number to card id
-    const keys=[1,2,3,4,5,6,7,8,9,10,11,12];
-    const items={
-        1:"pizza-slice-0",
-        2:"pizza-slice-1",
-        3:"mug-hot-0",
-        4:"mug-hot-1",
-        5:"burger-0",
-        6:"burger-1",
-        7:"cat-0",
-        8:"cat-1",
-        9:"motorcycle-0",
-        10:"motorcycle-1",
-        11:"cake-candles-0",
-        12:"cake-candles-1"
-        };
+    
+    
     let noItems=cards.length*0.5;
     let noAttemptsEasy=20;
     let noAttemptsHard=5;
@@ -26,7 +13,47 @@ document.addEventListener("DOMContentLoaded", function() {
     let inputName=[];
     let itemsFound=0;
     let gameInProgress=false;
-        
+    if (hardModeOn){
+        let keys=[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20];
+        let items= {
+            1:"pizza-slice-0",
+            2:"pizza-slice-1",
+            3:"mug-hot-0",
+            4:"mug-hot-1",
+            5:"burger-0",
+            6:"burger-1",
+            7:"cat-0",
+            8:"cat-1",
+            9:"motorcycle-0",
+            10:"motorcycle-1",
+            11:"cake-candles-0",
+            12:"cake-candles-1",
+            13:"ice-cream-0",
+            14:"ice-cream-1",
+            15:"snowman-0",
+            16:"snowman-1",
+            17:"shuttle-space-0",
+            18:"shuttle-space-1",
+            19:"carrot-0",
+            20:"carrot-1"
+            };  
+        } else {
+        let keys=[1,2,3,4,5,6,7,8,9,10,11,12];
+        let  items={
+            1:"pizza-slice-0",
+            2:"pizza-slice-1",
+            3:"mug-hot-0",
+            4:"mug-hot-1",
+            5:"burger-0",
+            6:"burger-1",
+            7:"cat-0",
+            8:"cat-1",
+            9:"motorcycle-0",
+            10:"motorcycle-1",
+            11:"cake-candles-0",
+            12:"cake-candles-1"
+            };  
+    }
     
 
     let promptArea=document.getElementById('prompt-area');
@@ -37,7 +64,6 @@ document.addEventListener("DOMContentLoaded", function() {
     let shuffledKeys=shuffleCards(keys);
     keyIndex=0;
     for (let card of cards){
-        
         //Turn all cards over
         card.innerHTML=`<i class="fa-2xl fa-solid fa-question"></i>`
         //Save old Id
