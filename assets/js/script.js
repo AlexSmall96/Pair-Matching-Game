@@ -4,18 +4,18 @@ document.addEventListener("DOMContentLoaded", function() {
     //Define object of items to map number to card id
     const keys=[1,2,3,4,5,6,7,8,9,10,11,12];
     const items={
-        1:'pizza-slice-0',
-        2:'pizza-slice-1',
-        3:'mug-hot-0',
-        4:'mug-hot-1',
-        5:'burger-0',
-        6:'burger-1',
-        7:'cat-0',
-        8:'cat-1',
-        9:'motorcycle-0',
-        10:'motorcycle-1',
-        11:'cake-candles-0',
-        12:'cake-candles-1'
+        1:"pizza-slice-0",
+        2:"pizza-slice-1",
+        3:"mug-hot-0",
+        4:"mug-hot-1",
+        5:"burger-0",
+        6:"burger-1",
+        7:"cat-0",
+        8:"cat-1",
+        9:"motorcycle-0",
+        10:"motorcycle-1",
+        11:"cake-candles-0",
+        12:"cake-candles-1"
         };
     let noItems=cards.length*0.5;
     let noAttemptsEasy=20;
@@ -28,24 +28,25 @@ document.addEventListener("DOMContentLoaded", function() {
     let gameInProgress=false;
         
     
+
     let promptArea=document.getElementById('prompt-area');
   
     let playButton = document.getElementById("new-game");
     //shuffle cards//
     playButton.addEventListener("click", function(){
     let shuffledKeys=shuffleCards(keys);
-
-    cards[0].id=items[shuffledKeys[0]];
     keyIndex=0;
     for (let card of cards){
+        
         //Turn all cards over
         card.innerHTML=`<i class="fa-2xl fa-solid fa-question"></i>`
+        //Save old Id
+        oldId=card.id
         //Shuffle cards//
         card.id=items[shuffledKeys[keyIndex]];
-        console.log(cards);
         keyIndex++;
         //Reset found items
-        let foundItem = document.getElementById(`found-${(card.id).slice(0,(card.id).length-2)}`)
+        let foundItem = document.getElementById(`found-${(oldId).slice(0,(oldId).length-2)}`)
         foundItem.innerHTML=`<i class="fa-2xl fa-solid fa-question"></i>`;
         }     
         //Reset attempts left
@@ -154,7 +155,7 @@ function shuffleCards(keys){
         noKeysRemaining -=1;
     }
     shuffledKeys.push(keys[0])
-    return shuffledKeys  
+    return shuffledKeys;
 }
 
 function newGame(){ 
