@@ -1,10 +1,4 @@
 document.addEventListener("DOMContentLoaded", function() {
-    //Count number of items
-    const cards = document.getElementsByClassName('card');
-    //Define object of items to map number to card id
-    
-    
-    let noItems=cards.length*0.5;
     let noAttemptsEasy=20;
     let noAttemptsHard=5;
     let attemptsLeft=noAttemptsEasy;
@@ -13,8 +7,9 @@ document.addEventListener("DOMContentLoaded", function() {
     let inputName=[];
     let itemsFound=0;
     let gameInProgress=false;
-    let keysHard=[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20];
-    let itemsHard= {
+    //Define object of items to map number to card id
+    const keysHard=[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20];
+    const itemsHard= {
             1:"pizza-slice-0",
             2:"pizza-slice-1",
             3:"mug-hot-0",
@@ -38,8 +33,8 @@ document.addEventListener("DOMContentLoaded", function() {
             };  
          
 
-    let keys=[1,2,3,4,5,6,7,8,9,10,11,12];
-    let items={
+    const keysEasy=[1,2,3,4,5,6,7,8,9,10,11,12];
+    const itemsEasy={
             1:"pizza-slice-0",
             2:"pizza-slice-1",
             3:"mug-hot-0",
@@ -54,11 +49,12 @@ document.addEventListener("DOMContentLoaded", function() {
             12:"cake-candles-1"
             };  
         
-    
+    let cards = document.getElementsByClassName('card');
+    let noItems=cards.length*0.5;
 
-    let promptArea=document.getElementById('prompt-area');
+    const promptArea=document.getElementById('prompt-area');
   
-    let playButton = document.getElementById("new-game");
+    const playButton = document.getElementById("new-game");
     //shuffle cards//
     playButton.addEventListener("click", function(){
     let shuffledKeys=shuffleCards(keys);
