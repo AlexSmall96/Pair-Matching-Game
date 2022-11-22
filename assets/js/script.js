@@ -13,9 +13,8 @@ document.addEventListener("DOMContentLoaded", function() {
     let inputName=[];
     let itemsFound=0;
     let gameInProgress=false;
-    if (hardModeOn){
-        let keys=[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20];
-        let items= {
+    let keysHard=[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20];
+    let itemsHard= {
             1:"pizza-slice-0",
             2:"pizza-slice-1",
             3:"mug-hot-0",
@@ -37,9 +36,10 @@ document.addEventListener("DOMContentLoaded", function() {
             19:"carrot-0",
             20:"carrot-1"
             };  
-        } else {
-        let keys=[1,2,3,4,5,6,7,8,9,10,11,12];
-        let  items={
+         
+
+    let keys=[1,2,3,4,5,6,7,8,9,10,11,12];
+    let items={
             1:"pizza-slice-0",
             2:"pizza-slice-1",
             3:"mug-hot-0",
@@ -53,7 +53,7 @@ document.addEventListener("DOMContentLoaded", function() {
             11:"cake-candles-0",
             12:"cake-candles-1"
             };  
-    }
+        
     
 
     let promptArea=document.getElementById('prompt-area');
