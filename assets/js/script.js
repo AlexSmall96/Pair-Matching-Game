@@ -48,25 +48,34 @@ document.addEventListener("DOMContentLoaded", function() {
             11:"cake-candles-0",
             12:"cake-candles-1"
             };  
-        
+    //Assign keys and item to either keysEasy or keysHard depdning on difficulty chosen//
+    let keys=keysEasy;
+    let items=itemsEasy;   
     let cards = document.getElementsByClassName('card');
     let noItems=cards.length*0.5;
 
     const promptArea=document.getElementById('prompt-area');
   
     const playButton = document.getElementById("new-game");
-    //shuffle cards//
+    
     playButton.addEventListener("click", function(){
-    let shuffledKeys=shuffleCards(keys);
-    keyIndex=0;
+    //shuffle cards//
+    let shuffledKeys=[];
+    let noKeys=keys.length;
+    let noKeysRemaining=noKeys;
+    let randIndex;
+    for (let i=0;i<noKeys;i++){
+        randIndex = Math.floor(Math.random()*noKeysRemaining);
+        shuffledKeys.push(keys[randIndex]);
+        keys.splice(randIndex,1);
+        noKeysRemaining -=1;
+    }
+    
     for (let card of cards){
         //Turn all cards over
         card.innerHTML=`<i class="fa-2xl fa-solid fa-question"></i>`
         //Save old Id
         oldId=card.id
-        //Shuffle cards//
-        card.id=items[shuffledKeys[keyIndex]];
-        keyIndex++;
         //Reset found items
         let foundItem = document.getElementById(`found-${(oldId).slice(0,(oldId).length-2)}`)
         foundItem.innerHTML=`<i class="fa-2xl fa-solid fa-question"></i>`;
@@ -166,19 +175,6 @@ document.addEventListener("DOMContentLoaded", function() {
     
 });
 
-function shuffleCards(keys){
-    let shuffledKeys =[];
-    let noKeys=keys.length
-    let noKeysRemaining=noKeys;
-    for (i=1;i<noKeys;i++){
-        let r=Math.floor(noKeysRemaining*Math.random());
-        shuffledKeys.push(keys[r])
-        keys.splice(r,1);
-        noKeysRemaining -=1;
-    }
-    shuffledKeys.push(keys[0])
-    return shuffledKeys;
-}
 
 function newGame(){ 
     //turns all cards over
