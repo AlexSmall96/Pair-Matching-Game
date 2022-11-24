@@ -61,7 +61,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 let gameTable=document.getElementById('game-table');
                 let gameTableRows=gameTable.getElementsByTagName('tr');
                 for (i=0;i<3;i++){
-                 extraCard=document.createElement('td');
+                 let extraCard=document.createElement('td');
                  extraCard.id=items[i+13];
                  extraCard.className="card";
                  extraCard.innerHTML=`<i class="fa-2xl fa-solid fa-question"></i>`
@@ -70,12 +70,29 @@ document.addEventListener("DOMContentLoaded", function() {
                 let extraRow=document.createElement('tr');
                 gameTable.appendChild(extraRow);
                 for (i=16;i<21;i++){
-                 extraCard=document.createElement('td');
+                 let extraCard=document.createElement('td');
                  extraCard.id=items[i];
                  extraCard.className="card";
                  extraCard.innerHTML=`<i class="fa-2xl fa-solid fa-question"></i>`
                  extraRow.appendChild(extraCard);
                 }
+                let foundTable=document.getElementById('found-table');
+                let row0=foundTable.getElementsByTagName('tr')[0];
+                let row1=foundTable.getElementsByTagName('tr')[1];
+                
+
+                for (let i=13;i<16;i+2){
+                    let extraCard=document.createElement('td');
+                    extraCard.id=items[i].slice(0,(items[i]).length-2)
+                    extraCard.innerHTML= `<i class="fa-2xl fa-solid fa-question"></i>`
+                    row0.appendChild(extraCard);
+                }
+                
+                
+              
+
+                
+               
             }
         } else {difficulty='easy'}
     })
