@@ -49,6 +49,7 @@ document.addEventListener("DOMContentLoaded", function() {
             12:"cake-candles-1"
             };  
     //Assign keys and item to either keysEasy or keysHard depdning on difficulty chosen//
+    let noAttempts=noAttemptsEasy;
     let keys=keysEasy;
     let items=itemsEasy;   
     let cards = document.getElementsByClassName('card');
@@ -59,7 +60,7 @@ document.addEventListener("DOMContentLoaded", function() {
     const playButton = document.getElementById("new-game");
     
     playButton.addEventListener("click", function(){
-    //shuffle cards//
+    //Shuffle keys into new array//
     let shuffledKeys=[];
     let noKeys=keys.length;
     let noKeysRemaining=noKeys;
@@ -68,31 +69,35 @@ document.addEventListener("DOMContentLoaded", function() {
         randIndex = Math.floor(Math.random()*noKeysRemaining);
         shuffledKeys.push(keys[randIndex]);
         keys.splice(randIndex,1);
-        noKeysRemaining -=1;
+        noKeysRemaining--;
     }
-    
+    //Overwrite keys with new order//
+    keys=shuffledKeys;
+    let cardNo=0;
+    let oldId;
     for (let card of cards){
         //Turn all cards over
         card.innerHTML=`<i class="fa-2xl fa-solid fa-question"></i>`
         //Save old Id
         oldId=card.id
+        //Shuffle cards using shuffled key values//
+        card.id=items[keys[cardNo]]
+        cardNo++;
         //Reset found items
-        let foundItem = document.getElementById(`found-${(oldId).slice(0,(oldId).length-2)}`)
+        let foundItem = document.getElementById(`found-${(card.id).slice(0,(card.id).length-2)}`)
         foundItem.innerHTML=`<i class="fa-2xl fa-solid fa-question"></i>`;
         }     
         //Reset attempts left
-        
-        attemptsLeft=noAttemptsEasy;
-        document.getElementById('attempts-left').innerHTML =attemptsLeft;
+        attemptsLeft=noAttempts;
+        document.getElementById('attempts-left').innerHTML = attemptsLeft;
         inputId=[];
         inputName=[];
         itemsFound=0;
         promptArea.innerHTML=`<p>Pick a Card!</p>`
-       gameInProgress=true;
+        gameInProgress=true;
     });
 
     //Add event listeners to cards//
-    
     for (let card of cards){
         card.addEventListener('click', function(){
             //Only let the user click if New game button has been clicked//
@@ -175,18 +180,4 @@ document.addEventListener("DOMContentLoaded", function() {
     
 });
 
-
-function newGame(){ 
-    //turns all cards over
-    //resets score
-    //outputs empty array and score of 0
-}
-
-function compareItems(item1,item2){
-    
-}
-
-function updateItemsFound(item){
-
-}
 
