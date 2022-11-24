@@ -2,11 +2,13 @@ document.addEventListener("DOMContentLoaded", function() {
     let noAttemptsEasy=20;
     let noAttemptsHard=5;
     let attemptsLeft=noAttemptsEasy;
-    let hardModeOn=false;
+    let difficulty='easy'
     let inputId=[];
     let inputName=[];
     let itemsFound=0;
     let gameInProgress=false;
+    let stopGame=false;
+    let cards = document.getElementsByClassName('card');
     //Define object of items to map number to card id
     const keysHard=[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20];
     const itemsHard= {
@@ -31,8 +33,7 @@ document.addEventListener("DOMContentLoaded", function() {
             19:"carrot-0",
             20:"carrot-1"
             };  
-         
-
+    //When easy mode is chosen
     const keysEasy=[1,2,3,4,5,6,7,8,9,10,11,12];
     const itemsEasy={
             1:"pizza-slice-0",
@@ -48,17 +49,53 @@ document.addEventListener("DOMContentLoaded", function() {
             11:"cake-candles-0",
             12:"cake-candles-1"
             };  
+    //Add event listener to difficulty switch
+    const diffSwitch=document.getElementById('switch')
+    diffSwitch.addEventListener('change', function(){
+        if (this.checked){
+            difficulty='hard'
+            if (difficulty==='hard'){
+                items=itemsHard;
+                keys=keysHard
+                //If hard mode is chosen change card layout
+                let gameTable=document.getElementById('game-table');
+                let gameTableRows=gameTable.getElementsByTagName('tr');
+                for (i=0;i<3;i++){
+                 extraCard=document.createElement('td');
+                 extraCard.id=items[i+13];
+                 extraCard.className="card";
+                 extraCard.innerHTML=`<i class="fa-2xl fa-solid fa-question"></i>`
+                 gameTableRows[i].appendChild(extraCard);
+                }
+                let extraRow=document.createElement('tr');
+                gameTable.appendChild(extraRow);
+                for (i=16;i<21;i++){
+                 extraCard=document.createElement('td');
+                 extraCard.id=items[i];
+                 extraCard.className="card";
+                 extraCard.innerHTML=`<i class="fa-2xl fa-solid fa-question"></i>`
+                 extraRow.appendChild(extraCard);
+                }
+            }
+        } else {difficulty='easy'}
+    })
+    
+   
+
     //Assign keys and item to either keysEasy or keysHard depdning on difficulty chosen//
     let noAttempts=noAttemptsEasy;
     let keys=keysEasy;
     let items=itemsEasy;   
-    let cards = document.getElementsByClassName('card');
-    let noItems=cards.length*0.5;
+    
+    
 
     const promptArea=document.getElementById('prompt-area');
   
-    const playButton = document.getElementById("new-game");
     
+
+  ;
+
+    const playButton = document.getElementById("new-game");
     playButton.addEventListener("click", function(){
     //Shuffle keys into new array//
     let shuffledKeys=[];
@@ -75,6 +112,8 @@ document.addEventListener("DOMContentLoaded", function() {
     keys=shuffledKeys;
     let cardNo=0;
     let oldId;
+    
+    let noItems=cards.length*0.5;
     for (let card of cards){
         //Turn all cards over
         card.innerHTML=`<i class="fa-2xl fa-solid fa-question"></i>`
@@ -122,7 +161,6 @@ document.addEventListener("DOMContentLoaded", function() {
                   document.getElementById('attempts-left').innerHTML =attemptsLeft;
                   if (inputName[0]===inputName[1]){
                   //Add item to found items//
-                  attemptsLeft -=1;
                   document.getElementById('attempts-left').innerHTML =attemptsLeft;
                   let foundItem = document.getElementById(`found-${itemName}`)
                   foundItem.innerHTML=`<i class="fa-2xl fa-solid fa-${itemName}"></i>`;
@@ -140,6 +178,9 @@ document.addEventListener("DOMContentLoaded", function() {
                   
                   inputId=[];
                   inputName=[];
+                  } else if (attemptsLeft<noItems-itemsFound){
+                    gameInProgress=false;
+                    promptArea.innerHTML='<p>Sorry, you ran out of guesses.</p>';
                   } else if (attemptsLeft>0){
                     //Let button appear to guess again//
                     promptArea.innerHTML='<button id="guess-again">Guess Again</button>'
