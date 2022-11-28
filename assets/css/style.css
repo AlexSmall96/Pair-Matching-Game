@@ -70,7 +70,7 @@ body{
            
     /* Checkbox checked toggle label bg color */
     .checkbox:checked + .toggle {
-        background-color: lightgray;;
+        background-color: lightgray;
     }
            
     /* Checkbox vanished */

@@ -77,22 +77,16 @@ document.addEventListener("DOMContentLoaded", function() {
                  extraRow.appendChild(extraCard);
                 }
                 let foundTable=document.getElementById('found-table');
-                let row0=foundTable.getElementsByTagName('tr')[0];
-                let row1=foundTable.getElementsByTagName('tr')[1];
-                
-
-                for (let i=13;i<16;i+2){
-                    let extraCard=document.createElement('td');
-                    extraCard.id=items[i].slice(0,(items[i]).length-2)
-                    extraCard.innerHTML= `<i class="fa-2xl fa-solid fa-question"></i>`
-                    row0.appendChild(extraCard);
+                let foundTableRows=foundTable.getElementsByTagName('tr');
+                for (let i=0;i<4;i++){
+                    let extraItem=document.createElement('td');
+                    extraItem.id=`found-${items[2*i+13].slice(0,(items[2*i+13]).length-2)}`;
+                    extraItem.innerHTML=`<i class="fa-2xl fa-solid fa-question"></i>`;
+                    if (i<2){
+                        foundTableRows[0].appendChild(extraItem);
+                    } else {foundTableRows[1].appendChild(extraItem);}
+                    
                 }
-                
-                
-              
-
-                
-               
             }
         } else {difficulty='easy'}
     })
@@ -103,6 +97,7 @@ document.addEventListener("DOMContentLoaded", function() {
     let noAttempts=noAttemptsEasy;
     let keys=keysEasy;
     let items=itemsEasy;   
+    let noItems=0.5*keysEasy.length;
     
     
 
@@ -110,7 +105,7 @@ document.addEventListener("DOMContentLoaded", function() {
   
     
 
-  ;
+  
 
     const playButton = document.getElementById("new-game");
     playButton.addEventListener("click", function(){
@@ -197,7 +192,7 @@ document.addEventListener("DOMContentLoaded", function() {
                   inputName=[];
                   } else if (attemptsLeft<noItems-itemsFound){
                     gameInProgress=false;
-                    promptArea.innerHTML='<p>Sorry, you ran out of guesses.</p>';
+                    promptArea.innerHTML='<p>Sorry, not enough guesses remaining.</p>';
                   } else if (attemptsLeft>0){
                     //Let button appear to guess again//
                     promptArea.innerHTML='<button id="guess-again">Guess Again</button>'
