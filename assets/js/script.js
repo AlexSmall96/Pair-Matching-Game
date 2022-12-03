@@ -7,6 +7,8 @@ document.addEventListener("DOMContentLoaded", function() {
     let inputName=[];
     let itemsFound=0;
     let gameInProgress=false;
+    const homePage=document.getElementById('home-page');
+    const gamePage=document.getElementById('game-page');
     let stopGame=false;
     let cards = document.getElementsByClassName('card');
     //Define object of items to map number to card id
@@ -232,6 +234,8 @@ document.addEventListener("DOMContentLoaded", function() {
 
     const playButton = document.getElementById("new-game");
     playButton.addEventListener("click", function(){
+    gamePage.style.display='inline';
+    homePage.style.display='none';
     //Shuffle keys into new array//
     let shuffledKeys=[];
     let noKeys=keys.length;
