@@ -354,7 +354,11 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     }
     
-    
+    const exitButton = document.getElementById("exit-game");
+    exitButton.addEventListener("click", function(){
+    gamePage.style.display='none';
+    homePage.style.display='inline';
+    })
 
    
     
