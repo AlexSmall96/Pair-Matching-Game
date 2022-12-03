@@ -90,6 +90,7 @@ document.addEventListener("DOMContentLoaded", function() {
                     
                 }
             cards = document.getElementsByClassName('card'); 
+            noItems=cards.length*0.5;
                 //Add event listeners to cards//
     for (let card of cards){
         card.addEventListener('click', function(){
@@ -169,7 +170,48 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     }
             }
-        } else {difficulty='easy'}
+        } else {difficulty='easy'
+          let gameTable=document.getElementById('game-table');
+          gameTable.innerHTML=
+          `
+          <tr>
+                <td id="mug-hot-0" class="card"><i class="fa-2xl fa-solid fa-question"></i></td>
+                <td id="burger-0" class="card"><i class="fa-2xl fa-solid fa-question"></i></td>
+                <td id="motorcycle-0" class="card"><i class="fa-2xl fa-solid fa-question"></i></td>
+                <td id="cake-candles-0" class="card"><i class="fa-2xl fa-solid fa-question"></i></td>
+            </tr>
+            <tr>
+                <td id="cake-candles-1" class="card"><i class="fa-2xl fa-solid fa-question"></i></td>
+                <td id="cat-1" class="card"><i class="fa-2xl fa-solid fa-question"></i></td>
+                <td id="pizza-slice-1" class="card"><i class="fa-2xl fa-solid fa-question"></i></td>
+                <td id="motorcycle-1" class="card"><i class="fa-2xl fa-solid fa-question"></i></td>
+            </tr>
+            <tr>
+                <td id="mug-hot-1" class="card"><i class="fa-2xl fa-solid fa-question"></i></td>
+                <td id="cat-0" class="card"><i class="fa-2xl fa-solid fa-question"></i></td>
+                <td id="burger-1" class="card"><i class="fa-2xl fa-solid fa-question"></i></td>
+                <td id="pizza-slice-0" class="card"><i class="fa-2xl fa-solid fa-question"></i></td>
+            </tr>
+          `
+          items=itemsEasy;
+        keys=keysEasy;
+        noAttempts=noAttemptsEasy;
+        document.getElementById('attempts-left').innerHTML = noAttempts;
+        let foundTable=document.getElementById('found-table');
+        foundTable.innerHTML=
+        `
+        <tr>
+        <td id="found-pizza-slice"><i class="fa-2xl fa-solid fa-question"></i></td>
+        <td id="found-mug-hot"><i class="fa-2xl fa-solid fa-question"></i></td>
+        <td id="found-burger"><i class="fa-2xl fa-solid fa-question"></i></td>
+        </tr>
+        <tr>
+        <td id="found-cat"><i class="fa-2xl fa-solid fa-question"></i></td>
+        <td id="found-motorcycle"><i class="fa-2xl fa-solid fa-question"></i></td>
+        <td id="found-cake-candles"><i class="fa-2xl fa-solid fa-question"></i></td>
+        </tr>
+        `
+    }
     })
     
    
