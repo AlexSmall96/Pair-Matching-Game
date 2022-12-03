@@ -7,8 +7,7 @@ document.addEventListener("DOMContentLoaded", function() {
     let inputName=[];
     let itemsFound=0;
     let gameInProgress=false;
-    let users={};
-    let highScore=0;
+    let highScores=[];
     const homePage=document.getElementById('home-page');
     const gamePage=document.getElementById('game-page');
     let stopGame=false;
@@ -318,13 +317,30 @@ document.addEventListener("DOMContentLoaded", function() {
                     promptArea.innerHTML=`<p>Well done! All items found.</p>`
                     gameInProgress=false;
                     let username=document.getElementById('username').value;
-                    users[username]=attemptsLeft;
                     let leaderboardRows=document.getElementById('leaderboard').getElementsByTagName('tr');
-                    leaderboardRows[1].innerHTML=`
-                    <td><i id="gold" class="fa-2xl fa-solid fa-medal"></i></td>
-                    <td>${username}</td>
-                    <td>${users[username]}</td>
-                    `    
+                    if (attemptsLeft>highScores[0]){
+                        leaderboardRows[1].innerHTML=`
+                        <td><i id="gold" class="fa-2xl fa-solid fa-medal"></i></td>
+                        <td>${username}</td>
+                        <td>${attemptsLeft}</td>
+                        `    
+                        highScores[0]=attemptsLeft;
+                    } else if (attemptsLeft>highScores[1]){
+                        leaderboardRows[2].innerHTML=`
+                        <td><i id="silver" class="fa-2xl fa-solid fa-medal"></i></td>
+                        <td>${username}</td>
+                        <td>${attemptsLeft}</td>
+                        `    
+                        highScores[1]=attemptsLeft;
+                    } else if (attemptsLeft>highScores[2]){
+                        leaderboardRows[3].innerHTML=`
+                        <td><i id="bronze" class="fa-2xl fa-solid fa-medal"></i></td>
+                        <td>${username}</td>
+                        <td>${attemptsLeft}</td>
+                        `    
+                        highScores[2]=attemptsLeft;
+                    }
+                    
                 }
                   
                   inputId=[];
