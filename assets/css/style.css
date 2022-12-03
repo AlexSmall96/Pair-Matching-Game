@@ -94,7 +94,10 @@ body{
 }
   
   
-           
+#leaderboard td, #leaderboard th{
+    padding:15px;
+}
+    
            
     
 

@@ -7,6 +7,8 @@ document.addEventListener("DOMContentLoaded", function() {
     let inputName=[];
     let itemsFound=0;
     let gameInProgress=false;
+    let users={};
+    let highScore=0;
     const homePage=document.getElementById('home-page');
     const gamePage=document.getElementById('game-page');
     let stopGame=false;
@@ -51,6 +53,7 @@ document.addEventListener("DOMContentLoaded", function() {
             11:"cake-candles-0",
             12:"cake-candles-1"
             };  
+    
     //Add event listener to difficulty switch
     const diffSwitch=document.getElementById('switch')
     diffSwitch.addEventListener('change', function(){
@@ -135,6 +138,7 @@ document.addEventListener("DOMContentLoaded", function() {
                   
                   inputId=[];
                   inputName=[];
+
                   } else if (attemptsLeft<noItems-itemsFound){
                     gameInProgress=false;
                     promptArea.innerHTML='<p>Sorry, not enough guesses remaining.</p>';
@@ -313,7 +317,15 @@ document.addEventListener("DOMContentLoaded", function() {
                   } else {
                     promptArea.innerHTML=`<p>Well done! All items found.</p>`
                     gameInProgress=false;
-                         }
+                    let username=document.getElementById('username').value;
+                    users[username]=attemptsLeft;
+                    let leaderboardRows=document.getElementById('leaderboard').getElementsByTagName('tr');
+                    leaderboardRows[1].innerHTML=`
+                    <td><i id="gold" class="fa-2xl fa-solid fa-medal"></i></td>
+                    <td>${username}</td>
+                    <td>${users[username]}</td>
+                    `    
+                }
                   
                   inputId=[];
                   inputName=[];
