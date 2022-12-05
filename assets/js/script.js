@@ -237,7 +237,8 @@ document.addEventListener("DOMContentLoaded", function() {
 
     const playButton = document.getElementById("new-game");
     playButton.addEventListener("click", function(){
-    gamePage.style.display='inline';
+    gamePage.style.display='block';
+    gamePage.style.borderStyle='solid';
     homePage.style.display='none';
     //Shuffle keys into new array//
     let shuffledKeys=[];
@@ -385,7 +386,7 @@ document.addEventListener("DOMContentLoaded", function() {
     const exitButton = document.getElementById("exit-game");
     exitButton.addEventListener("click", function(){
     gamePage.style.display='none';
-    homePage.style.display='inline';
+    homePage.style.display='block';
     })
 
    

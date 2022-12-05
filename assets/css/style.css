@@ -3,15 +3,22 @@
 body{
     text-align: center;
     font-family: 'Electrolize', sans-serif;
+    background-color: grey;
 }
 #home-page{
     width:50%;
     border-style: solid;
     border-radius:10px;
+    background-color: white;
+    padding:15px;
 }
 
 #game-page{
     display:none;
+    width:50%;
+    border-style: solid;
+    border-radius:10px;
+    background-color: white;
 }
 
 .vertical-margin{
