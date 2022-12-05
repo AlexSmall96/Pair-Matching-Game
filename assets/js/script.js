@@ -174,7 +174,7 @@ document.addEventListener("DOMContentLoaded", function() {
         }
         });
     }
-            }
+            } 
         } else {difficulty='easy'
           let gameTable=document.getElementById('game-table');
           gameTable.innerHTML=
@@ -198,7 +198,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 <td id="pizza-slice-0" class="card"><i class="fa-2xl fa-solid fa-question"></i></td>
             </tr>
           `
-          items=itemsEasy;
+        items=itemsEasy;
         keys=keysEasy;
         noAttempts=noAttemptsEasy;
         document.getElementById('attempts-left').innerHTML = noAttempts;
@@ -216,18 +216,13 @@ document.addEventListener("DOMContentLoaded", function() {
         <td id="found-cake-candles"><i class="fa-2xl fa-solid fa-question"></i></td>
         </tr>
         `
+        cards = document.getElementsByClassName('card'); 
+        
     }
     })
     
    
 
-    //Assign keys and item to either keysEasy or keysHard depdning on difficulty chosen//
-    let noAttempts=noAttemptsEasy;
-    let keys=keysEasy;
-    let items=itemsEasy;   
-    let noItems=0.5*keysEasy.length;
-    
-    
 
     const promptArea=document.getElementById('prompt-area');
   
@@ -237,8 +232,16 @@ document.addEventListener("DOMContentLoaded", function() {
 
     const playButton = document.getElementById("new-game");
     playButton.addEventListener("click", function(){
+    if (difficulty==='easy'){
+        items=itemsEasy;
+        keys=[1,2,3,4,5,6,7,8,9,10,11,12];
+        noAttempts=noAttemptsEasy;
+    } else {
+        items=itemsHard;
+        keys=[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20]
+        noAttempts=noAttemptsHard;
+    }
     gamePage.style.display='block';
-    gamePage.style.borderStyle='solid';
     homePage.style.display='none';
     //Shuffle keys into new array//
     let shuffledKeys=[];
@@ -255,7 +258,7 @@ document.addEventListener("DOMContentLoaded", function() {
     keys=shuffledKeys;
     let cardNo=0;
     let oldId;
-    
+    cards = document.getElementsByClassName('card'); 
     let noItems=cards.length*0.5;
     for (let card of cards){
         //Turn all cards over
@@ -277,9 +280,8 @@ document.addEventListener("DOMContentLoaded", function() {
         itemsFound=0;
         promptArea.innerHTML=`<p>Pick a Card!</p>`
         gameInProgress=true;
-    });
 
-    //Add event listeners to cards//
+        //Add event listeners to cards//
     for (let card of cards){
         card.addEventListener('click', function(){
             //Only let the user click if New game button has been clicked//
@@ -382,6 +384,9 @@ document.addEventListener("DOMContentLoaded", function() {
         }
         });
     }
+    });
+
+    
     
     const exitButton = document.getElementById("exit-game");
     exitButton.addEventListener("click", function(){
