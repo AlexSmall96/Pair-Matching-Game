@@ -4,10 +4,16 @@ body{
     text-align: center;
     font-family: 'Electrolize', sans-serif;
 }
+#home-page{
+    width:50%;
+    border-style: solid;
+    border-radius:10px;
+}
 
 #game-page{
     display:none;
 }
+
 .vertical-margin{
     margin-top:20px;
     margin-bottom:20px;
