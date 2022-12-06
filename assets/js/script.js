@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", function() {
     let noAttemptsEasy=25;
-    let noAttemptsHard=30;
+    let noAttemptsHard=50;
     let attemptsLeft=noAttemptsEasy;
     let difficulty='easy'
     let inputId=[];
@@ -12,6 +12,7 @@ document.addEventListener("DOMContentLoaded", function() {
     const gamePage=document.getElementById('game-page');
     const leaderboardRows=document.getElementById('leaderboard').getElementsByTagName('tr');
     const medalOrder = {1:"gold" ,2:"silver",3:"bronze"};
+    const diffMultiplier={'easy':1,'hard':1.5};
     let stopGame=false;
     let cards = document.getElementsByClassName('card');
     //Define object of items to map number to card id
@@ -247,10 +248,10 @@ document.addEventListener("DOMContentLoaded", function() {
                     if (username){
                         if (scores[username]){
                             if (attemptsLeft>scores[username]){
-                                scores[username]=attemptsLeft;
+                                scores[username]=attemptsLeft*diffMultiplier(difficulty);
                             }
                         } else {
-                            scores[username]=attemptsLeft;
+                            scores[username]=attemptsLeft*diffMultiplier[difficulty];
                         }
                     }
                     //Add new top 3 scores to leaderboard
