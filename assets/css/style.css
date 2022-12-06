@@ -12,7 +12,6 @@ h1{
 
 .header-icon{
     color:blue;
-    text-shadow: 5px 5px rgb(0, 81, 255);
 }
 #home-page{
     width:50%;
@@ -141,6 +140,12 @@ button{
     height:40px;
     font-weight: bold;
     box-shadow: 1px 1px grey;
+}
+
+#leaderboard,#found-table{
+    border-style: solid;
+    background-image: linear-gradient(to bottom right, lightgreen, green);
+    box-shadow: 5px 5px green;;
 }
            
     
