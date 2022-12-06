@@ -2,7 +2,7 @@ document.addEventListener("DOMContentLoaded", function() {
     let noAttemptsEasy=25;
     let noAttemptsHard=50;
     let attemptsLeft=noAttemptsEasy;
-    let difficulty='easy'
+    let difficulty='easy';
     let inputId=[];
     let inputName=[];
     let itemsFound=0;
@@ -13,7 +13,6 @@ document.addEventListener("DOMContentLoaded", function() {
     const leaderboardRows=document.getElementById('leaderboard').getElementsByTagName('tr');
     const medalOrder = {1:"gold" ,2:"silver",3:"bronze"};
     const diffMultiplier={'easy':1,'hard':1.5};
-    let stopGame=false;
     let cards = document.getElementsByClassName('card');
     //Define object of items to map number to card id
     const keysHard=[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20];
@@ -57,23 +56,23 @@ document.addEventListener("DOMContentLoaded", function() {
             };  
     
     //Add event listener to difficulty switch
-    const diffSwitch=document.getElementById('switch')
+    const diffSwitch=document.getElementById('switch');
     diffSwitch.addEventListener('change', function(){
         if (this.checked){
-            difficulty='hard'
+            difficulty='hard';
             if (difficulty==='hard'){
-                items=itemsHard;
-                keys=keysHard;
-                noAttempts=noAttemptsHard;
+                let items=itemsHard;
+                let keys=keysHard;
+                let noAttempts=noAttemptsHard;
                 document.getElementById('attempts-left').innerHTML = noAttempts;
                 //If hard mode is chosen change card layout
                 let gameTable=document.getElementById('game-table');
                 let gameTableRows=gameTable.getElementsByTagName('tr');
-                for (i=0;i<3;i++){
+                for (let i=0;i<3;i++){
                  let extraCard=document.createElement('td');
                  extraCard.id=items[i+13];
                  extraCard.className="card";
-                 extraCard.innerHTML=`<i class="fa-2xl fa-solid fa-question"></i>`
+                 extraCard.innerHTML=`<i class="fa-2xl fa-solid fa-question"></i>`;
                  gameTableRows[i].appendChild(extraCard);
                 }
                 let extraRow=document.createElement('tr');
@@ -82,7 +81,7 @@ document.addEventListener("DOMContentLoaded", function() {
                  let extraCard=document.createElement('td');
                  extraCard.id=items[i];
                  extraCard.className="card";
-                 extraCard.innerHTML=`<i class="fa-2xl fa-solid fa-question"></i>`
+                 extraCard.innerHTML=`<i class="fa-2xl fa-solid fa-question"></i>`;
                  extraRow.appendChild(extraCard);
                 }
                 let foundTable=document.getElementById('found-table');
@@ -97,9 +96,9 @@ document.addEventListener("DOMContentLoaded", function() {
                     
                 }
             cards = document.getElementsByClassName('card'); 
-            noItems=cards.length*0.5;
+            let noItems=cards.length*0.5;
             } 
-        } else {difficulty='easy'
+        } else {difficulty='easy';
           let gameTable=document.getElementById('game-table');
           gameTable.innerHTML=
           `
@@ -121,7 +120,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 <td id="burger-1" class="card"><i class="fa-2xl fa-solid fa-question"></i></td>
                 <td id="pizza-slice-0" class="card"><i class="fa-2xl fa-solid fa-question"></i></td>
             </tr>
-          `
+          `;
         items=itemsEasy;
         keys=keysEasy;
         noAttempts=noAttemptsEasy;
@@ -139,11 +138,11 @@ document.addEventListener("DOMContentLoaded", function() {
         <td id="found-motorcycle"><i class="fa-2xl fa-solid fa-question"></i></td>
         <td id="found-cake-candles"><i class="fa-2xl fa-solid fa-question"></i></td>
         </tr>
-        `
+        `;
         cards = document.getElementsByClassName('card'); 
         
     }
-    })
+    });
     
    
 
@@ -162,7 +161,7 @@ document.addEventListener("DOMContentLoaded", function() {
         noAttempts=noAttemptsEasy;
     } else {
         items=itemsHard;
-        keys=[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20]
+        keys=[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20];
         noAttempts=noAttemptsHard;
     }
     gamePage.style.display='block';
@@ -186,14 +185,14 @@ document.addEventListener("DOMContentLoaded", function() {
     let noItems=keys.length*0.5;
     for (let card of cards){
         //Turn all cards over
-        card.innerHTML=`<i class="fa-2xl fa-solid fa-question"></i>`
+        card.innerHTML=`<i class="fa-2xl fa-solid fa-question"></i>`;
         //Save old Id
-        oldId=card.id
+        oldId=card.id;
         //Shuffle cards using shuffled key values//
-        card.id=items[keys[cardNo]]
+        card.id=items[keys[cardNo]];
         cardNo++;
         //Reset found items
-        let foundItem = document.getElementById(`found-${(card.id).slice(0,(card.id).length-2)}`)
+        let foundItem = document.getElementById(`found-${(card.id).slice(0,(card.id).length-2)}`);
         foundItem.innerHTML=`<i class="fa-2xl fa-solid fa-question"></i>`;
         }     
         itemsFound=0;
@@ -203,9 +202,9 @@ document.addEventListener("DOMContentLoaded", function() {
         inputId=[];
         inputName=[];
         itemsFound=0;
-        promptArea.innerHTML=`<p>Pick a Card!</p>`
+        promptArea.innerHTML=`<p>Pick a Card!</p>`;
         gameInProgress=true;
-
+        let username=document.getElementById('username').value;
         //Add event listeners to cards//
     for (let card of cards){
         card.addEventListener('click', function(){
@@ -224,7 +223,7 @@ document.addEventListener("DOMContentLoaded", function() {
                //Turn card over to show item//
                card.innerHTML=`<i class="fa-2xl fa-solid fa-${itemName}"></i>`;
                inputId.push(item);
-               inputName.push(itemName)
+               inputName.push(itemName);
                //If cards selected match
                if (inputId.length===2){
                   attemptsLeft -=1;
@@ -232,19 +231,19 @@ document.addEventListener("DOMContentLoaded", function() {
                   if (inputName[0]===inputName[1]){
                   //Add item to found items//
                   document.getElementById('attempts-left').innerHTML =attemptsLeft;
-                  let foundItem = document.getElementById(`found-${itemName}`)
+                  let foundItem = document.getElementById(`found-${itemName}`);
                   foundItem.innerHTML=`<i class="fa-2xl fa-solid fa-${itemName}"></i>`;
                   //Increase score
                   itemsFound++;
                   //Show well done message//
                   if (noItems-itemsFound>1){
-                    promptArea.innerHTML=`<p>Well done! ${noItems-itemsFound} items left to find.</p>`
+                    promptArea.innerHTML=`<p>Well done! ${noItems-itemsFound} items left to find.</p>`;
                   } else if (noItems-itemsFound==1){
-                    promptArea.innerHTML=`<p>Well done! 1 item left to find.</p>`
+                    promptArea.innerHTML=`<p>Well done! 1 item left to find.</p>`;
                   } else {
-                    promptArea.innerHTML=`<p>Well done! All items found.</p>`
+                    promptArea.innerHTML=`<p>Well done! All items found.</p>`;
                     gameInProgress=false;
-                    let username=document.getElementById('username').value;
+                    
                     //Update users score if new high score is achieved and username was entered
                     if (username){
                         if (scores[username]){
@@ -256,7 +255,7 @@ document.addEventListener("DOMContentLoaded", function() {
                         }
                     }
                     //Add new top 3 scores to leaderboard
-                    let sortedNames= Object.entries(scores).sort((a,b)=>b[1]-a[1]).map(el=>el[0])
+                    let sortedNames= Object.entries(scores).sort((a,b)=>b[1]-a[1]).map(el=>el[0]);
                     for (let i=0;i<3;i++){
                         if (sortedNames[i]){
                             leaderboardRows[i+1].innerHTML=`
@@ -276,7 +275,7 @@ document.addEventListener("DOMContentLoaded", function() {
                     promptArea.innerHTML='<p>Sorry, not enough guesses remaining.</p>';
                   } else if (attemptsLeft>0){
                     //Let button appear to guess again//
-                    promptArea.innerHTML='<button id="guess-again">Guess Again</button>'
+                    promptArea.innerHTML='<button id="guess-again">Guess Again</button>';
                     let guessAgain=document.getElementById('guess-again');
                     guessAgain.addEventListener('click',function(){
                         //Check if two cards have been selected//
@@ -294,9 +293,9 @@ document.addEventListener("DOMContentLoaded", function() {
                         inputId=[];
                         inputName=[];
                         //Make button dissapear after it is clicked//
-                        promptArea.innerHTML='<p>...</p>'
+                        promptArea.innerHTML='<p>...</p>';
                        
-                    })
+                    });
                   } else {promptArea.innerHTML='<p>Sorry, you ran out of guesses.</p>';
                           gameInProgress=false;
                 }
@@ -315,7 +314,7 @@ document.addEventListener("DOMContentLoaded", function() {
     exitButton.addEventListener("click", function(){
     gamePage.style.display='none';
     homePage.style.display='block';
-    })
+    });
 
    
     
