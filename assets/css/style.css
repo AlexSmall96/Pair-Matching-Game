@@ -5,6 +5,15 @@ body{
     font-family: 'Electrolize', sans-serif;
     background-image: linear-gradient(to bottom right, lightblue, white);
 }
+
+h1{
+    letter-spacing: 10px;
+}
+
+.header-icon{
+    color:blue;
+    text-shadow: 5px 5px rgb(0, 81, 255);
+}
 #home-page{
     width:50%;
     border-style: solid;
@@ -16,7 +25,7 @@ body{
 
 #game-page{
     display:none;
-    width:50%;
+    width:25%;
     border-style: solid;
     border-radius:10px;
     background-image: linear-gradient(to bottom right, lightgreen, green);
