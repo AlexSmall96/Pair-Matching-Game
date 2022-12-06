@@ -45,7 +45,7 @@ h1{
 
 
 #prompt-area{
-    height:15px;
+    height:40px;
 }
 
 .vertical-margin{
@@ -133,7 +133,15 @@ h1{
 #leaderboard td, #leaderboard th{
     padding:15px;
 }
-    
+
+button{
+    font-family: 'Electrolize', sans-serif;
+    border-style: solid;
+    width:100px;
+    height:40px;
+    font-weight: bold;
+    box-shadow: 1px 1px grey;
+}
            
     
 

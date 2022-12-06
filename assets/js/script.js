@@ -293,7 +293,7 @@ document.addEventListener("DOMContentLoaded", function() {
                         inputId=[];
                         inputName=[];
                         //Make button dissapear after it is clicked//
-                        promptArea.innerHTML='<p>...</p>';
+                        promptArea.innerHTML='<p></p>';
                        
                     });
                   } else {promptArea.innerHTML='<p>Sorry, you ran out of guesses.</p>';
