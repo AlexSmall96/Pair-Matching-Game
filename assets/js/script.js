@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", function() {
-    let noAttemptsEasy=15;
+    let noAttemptsEasy=25;
     let noAttemptsHard=30;
     let attemptsLeft=noAttemptsEasy;
     let difficulty='easy'
@@ -7,9 +7,11 @@ document.addEventListener("DOMContentLoaded", function() {
     let inputName=[];
     let itemsFound=0;
     let gameInProgress=false;
-    let highScores=[];
+    let scores={' ':' ',' ':' ',' ':' ' };
     const homePage=document.getElementById('home-page');
     const gamePage=document.getElementById('game-page');
+    const leaderboardRows=document.getElementById('leaderboard').getElementsByTagName('tr');
+    const medalOrder = {1:"gold" ,2:"silver",3:"bronze"};
     let stopGame=false;
     let cards = document.getElementsByClassName('card');
     //Define object of items to map number to card id
@@ -241,30 +243,28 @@ document.addEventListener("DOMContentLoaded", function() {
                     promptArea.innerHTML=`<p>Well done! All items found.</p>`
                     gameInProgress=false;
                     let username=document.getElementById('username').value;
-                    let leaderboardRows=document.getElementById('leaderboard').getElementsByTagName('tr');
-                    if (attemptsLeft>highScores[0]){
-                        leaderboardRows[1].innerHTML=`
-                        <td><i id="gold" class="fa-2xl fa-solid fa-medal"></i></td>
-                        <td>${username}</td>
-                        <td>${attemptsLeft}</td>
-                        `    
-                        highScores[0]=attemptsLeft;
-                    } else if (attemptsLeft>highScores[1]){
-                        leaderboardRows[2].innerHTML=`
-                        <td><i id="silver" class="fa-2xl fa-solid fa-medal"></i></td>
-                        <td>${username}</td>
-                        <td>${attemptsLeft}</td>
-                        `    
-                        highScores[1]=attemptsLeft;
-                    } else if (attemptsLeft>highScores[2]){
-                        leaderboardRows[3].innerHTML=`
-                        <td><i id="bronze" class="fa-2xl fa-solid fa-medal"></i></td>
-                        <td>${username}</td>
-                        <td>${attemptsLeft}</td>
-                        `    
-                        highScores[2]=attemptsLeft;
+                    //Update users score if new high score is achieved and username was entered
+                    if (username){
+                        if (scores[username]){
+                            if (attemptsLeft>scores[username]){
+                                scores[username]=attemptsLeft;
+                            }
+                        } else {
+                            scores[username]=attemptsLeft;
+                        }
                     }
-                    
+                    //Add new top 3 scores to leaderboard
+                    let sortedNames= Object.entries(scores).sort((a,b)=>b[1]-a[1]).map(el=>el[0])
+                    for (let i=0;i<3;i++){
+                        if (sortedNames[i]){
+                            leaderboardRows[i+1].innerHTML=`
+                            <td><i id="${medalOrder[i+1]}" class="fa-2xl fa-solid fa-medal"></i></td>
+                            <td>${sortedNames[i]}</td>
+                            <td>${scores[sortedNames[i]]}</td>
+                               ` ;
+                        }
+                       
+                    }
                 }
                   
                   inputId=[];
@@ -318,5 +318,6 @@ document.addEventListener("DOMContentLoaded", function() {
    
     
 });
+
 
 
