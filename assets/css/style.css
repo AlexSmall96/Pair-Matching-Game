@@ -21,6 +21,10 @@ body{
     background-color: white;
 }
 
+#prompt-area{
+    height:300px;
+}
+
 .vertical-margin{
     margin-top:20px;
     margin-bottom:20px;

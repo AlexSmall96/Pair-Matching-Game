@@ -183,7 +183,7 @@ document.addEventListener("DOMContentLoaded", function() {
     let cardNo=0;
     let oldId;
     cards = document.getElementsByClassName('card'); 
-    let noItems=cards.length*0.5;
+    let noItems=keys.length*0.5;
     for (let card of cards){
         //Turn all cards over
         card.innerHTML=`<i class="fa-2xl fa-solid fa-question"></i>`
@@ -196,6 +196,7 @@ document.addEventListener("DOMContentLoaded", function() {
         let foundItem = document.getElementById(`found-${(card.id).slice(0,(card.id).length-2)}`)
         foundItem.innerHTML=`<i class="fa-2xl fa-solid fa-question"></i>`;
         }     
+        itemsFound=0;
         //Reset attempts left
         attemptsLeft=noAttempts;
         document.getElementById('attempts-left').innerHTML = attemptsLeft;
