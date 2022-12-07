@@ -31,6 +31,14 @@ h1{
     box-shadow: 5px 5px green;; 
 }
 
+@media only screen and (max-width: 930px) {
+    #game-page {
+        width:90%;
+    }
+  }
+ 
+
+
 #about, #instructions, #settings{
     border-style: solid;
     border-color: grey;
@@ -57,7 +65,7 @@ h1{
 }
 
 
-#game-table td, .card-deck{
+#game-table td{
     padding:40px;
     background-color:cadetblue;
     border: 2px solid;
@@ -65,12 +73,17 @@ h1{
     box-shadow: 5px 5px green;
 }
 
-
-
 #score-area .fa-solid{
     padding:30px;
 }
-
+@media only screen and (max-width: 530px) {
+    #game-table td {
+        padding:12px;
+    }
+    #score-area .fa-solid{
+        padding:16px;
+    }
+  }
 
 #guess-again{
     margin:15px;
