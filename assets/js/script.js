@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", function() {
     let inputId=[];
     let inputName=[];
     let itemsFound=0;
-    let scores={' ':' ',' ':' ',' ':' ' };
+    let scores={};
     const homePage=document.getElementById('home-page');
     const gamePage=document.getElementById('game-page');
     const leaderboardRows=document.getElementById('leaderboard').getElementsByTagName('tr');
@@ -16,6 +16,8 @@ document.addEventListener("DOMContentLoaded", function() {
     let items;
     let keys;
     let noAttempts;
+    let attemptsLeft;
+    let username;
     //Add event listener to difficulty switch
     const diffSwitch=document.getElementById('switch');
     diffSwitch.addEventListener('change', function(){
@@ -201,13 +203,13 @@ document.addEventListener("DOMContentLoaded", function() {
         }     
         itemsFound=0;
         //Reset attempts left
-        let attemptsLeft=noAttempts;
+        attemptsLeft=noAttempts;
         document.getElementById('attempts-left').innerHTML = attemptsLeft;
         inputId=[];
         inputName=[];
         itemsFound=0;
         promptArea.innerHTML=`<p>Pick a Card!</p>`;
-        let username=document.getElementById('username').value;
+        username=document.getElementById('username').value;
         //Add event listeners to cards//
     for (let card of cards){
         card.addEventListener('click', function(){
@@ -248,7 +250,7 @@ document.addEventListener("DOMContentLoaded", function() {
                     if (username){
                         if (scores[username]){
                             if (attemptsLeft>scores[username]){
-                                scores[username]=attemptsLeft*diffMultiplier(difficulty);
+                                scores[username]=attemptsLeft*diffMultiplier[difficulty];
                             }
                         } else {
                             scores[username]=attemptsLeft*diffMultiplier[difficulty];
