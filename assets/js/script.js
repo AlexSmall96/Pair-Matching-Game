@@ -1,22 +1,85 @@
 document.addEventListener("DOMContentLoaded", function() {
-    let noAttemptsEasy=25;
-    let noAttemptsHard=50;
-    let attemptsLeft=noAttemptsEasy;
     let difficulty='easy';
-    let inputId=[];
-    let inputName=[];
-    let itemsFound=0;
-    let gameInProgress=false;
     let scores={' ':' ',' ':' ',' ':' ' };
     const homePage=document.getElementById('home-page');
     const gamePage=document.getElementById('game-page');
     const leaderboardRows=document.getElementById('leaderboard').getElementsByTagName('tr');
     const medalOrder = {1:"gold" ,2:"silver",3:"bronze"};
     const diffMultiplier={'easy':1,'hard':1.5};
+    const promptArea=document.getElementById('prompt-area');
+    const diffSwitch=document.getElementById('switch');
+    const playButton = document.getElementById("new-game");
+    const exitButton = document.getElementById("exit-game");
     let cards = document.getElementsByClassName('card');
-    //Define object of items to map number to card id
-    const keysHard=[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20];
-    const itemsHard= {
+    
+    //Add event listener to difficulty switch
+    diffSwitch.addEventListener('change', function(){
+        if (this.checked){difficulty='hard';}
+        else {difficulty='easy'}
+        });
+            
+    //Add event listener to play button
+    playButton.addEventListener("click", function(){
+    if (difficulty==='easy'){
+        //Assign items, keys and noAttempts to easy values
+        let items={
+            1:"pizza-slice-0",
+            2:"pizza-slice-1",
+            3:"mug-hot-0",
+            4:"mug-hot-1",
+            5:"burger-0",
+            6:"burger-1",
+            7:"cat-0",
+            8:"cat-1",
+            9:"motorcycle-0",
+            10:"motorcycle-1",
+            11:"cake-candles-0",
+            12:"cake-candles-1"
+            };
+        let keys=[1,2,3,4,5,6,7,8,9,10,11,12];
+        let noAttempts=25;
+        //Set game table inner html to easy card layout
+        let gameTable=document.getElementById('game-table');
+          gameTable.innerHTML=`
+          <tr>
+                <td id="mug-hot-0" class="card"><i class="fa-2xl fa-solid fa-question"></i></td>
+                <td id="burger-0" class="card"><i class="fa-2xl fa-solid fa-question"></i></td>
+                <td id="motorcycle-0" class="card"><i class="fa-2xl fa-solid fa-question"></i></td>
+                <td id="cake-candles-0" class="card"><i class="fa-2xl fa-solid fa-question"></i></td>
+            </tr>
+            <tr>
+                <td id="cake-candles-1" class="card"><i class="fa-2xl fa-solid fa-question"></i></td>
+                <td id="cat-1" class="card"><i class="fa-2xl fa-solid fa-question"></i></td>
+                <td id="pizza-slice-1" class="card"><i class="fa-2xl fa-solid fa-question"></i></td>
+                <td id="motorcycle-1" class="card"><i class="fa-2xl fa-solid fa-question"></i></td>
+            </tr>
+            <tr>
+                <td id="mug-hot-1" class="card"><i class="fa-2xl fa-solid fa-question"></i></td>
+                <td id="cat-0" class="card"><i class="fa-2xl fa-solid fa-question"></i></td>
+                <td id="burger-1" class="card"><i class="fa-2xl fa-solid fa-question"></i></td>
+                <td id="pizza-slice-0" class="card"><i class="fa-2xl fa-solid fa-question"></i></td>
+            </tr>
+            `;
+        //Set found table to easy items
+        document.getElementById('attempts-left').innerHTML = noAttempts;
+        let foundTable=document.getElementById('found-table');
+        foundTable.innerHTML=`
+        <tr>
+        <td id="found-pizza-slice"><i class="fa-2xl fa-solid fa-question"></i></td>
+        <td id="found-mug-hot"><i class="fa-2xl fa-solid fa-question"></i></td>
+        <td id="found-burger"><i class="fa-2xl fa-solid fa-question"></i></td>
+        </tr>
+        <tr>
+        <td id="found-cat"><i class="fa-2xl fa-solid fa-question"></i></td>
+        <td id="found-motorcycle"><i class="fa-2xl fa-solid fa-question"></i></td>
+        <td id="found-cake-candles"><i class="fa-2xl fa-solid fa-question"></i></td>
+        </tr>
+        `;
+        //Reassign cards array
+        let cards = document.getElementsByClassName('card'); 
+    } else if (difficulty='hard'){
+        //Assign items, keys and noAttempts to hard values
+        let items={
             1:"pizza-slice-0",
             2:"pizza-slice-1",
             3:"mug-hot-0",
@@ -37,133 +100,45 @@ document.addEventListener("DOMContentLoaded", function() {
             18:"shuttle-space-1",
             19:"carrot-0",
             20:"carrot-1"
-            };  
-    //When easy mode is chosen
-    const keysEasy=[1,2,3,4,5,6,7,8,9,10,11,12];
-    const itemsEasy={
-            1:"pizza-slice-0",
-            2:"pizza-slice-1",
-            3:"mug-hot-0",
-            4:"mug-hot-1",
-            5:"burger-0",
-            6:"burger-1",
-            7:"cat-0",
-            8:"cat-1",
-            9:"motorcycle-0",
-            10:"motorcycle-1",
-            11:"cake-candles-0",
-            12:"cake-candles-1"
-            };  
-    
-    //Add event listener to difficulty switch
-    const diffSwitch=document.getElementById('switch');
-    diffSwitch.addEventListener('change', function(){
-        if (this.checked){
-            difficulty='hard';
-            if (difficulty==='hard'){
-                let items=itemsHard;
-                let keys=keysHard;
-                let noAttempts=noAttemptsHard;
-                document.getElementById('attempts-left').innerHTML = noAttempts;
-                //If hard mode is chosen change card layout
-                let gameTable=document.getElementById('game-table');
-                let gameTableRows=gameTable.getElementsByTagName('tr');
-                for (let i=0;i<3;i++){
-                 let extraCard=document.createElement('td');
-                 extraCard.id=items[i+13];
-                 extraCard.className="card";
-                 extraCard.innerHTML=`<i class="fa-2xl fa-solid fa-question"></i>`;
-                 gameTableRows[i].appendChild(extraCard);
-                }
-                let extraRow=document.createElement('tr');
-                gameTable.appendChild(extraRow);
-                for (i=16;i<21;i++){
-                 let extraCard=document.createElement('td');
-                 extraCard.id=items[i];
-                 extraCard.className="card";
-                 extraCard.innerHTML=`<i class="fa-2xl fa-solid fa-question"></i>`;
-                 extraRow.appendChild(extraCard);
-                }
-                let foundTable=document.getElementById('found-table');
-                let foundTableRows=foundTable.getElementsByTagName('tr');
-                for (let i=0;i<4;i++){
-                    let extraItem=document.createElement('td');
-                    extraItem.id=`found-${items[2*i+13].slice(0,(items[2*i+13]).length-2)}`;
-                    extraItem.innerHTML=`<i class="fa-2xl fa-solid fa-question"></i>`;
-                    if (i<2){
-                        foundTableRows[0].appendChild(extraItem);
-                    } else {foundTableRows[1].appendChild(extraItem);}
-                    
-                }
-            cards = document.getElementsByClassName('card'); 
-            let noItems=cards.length*0.5;
-            } 
-        } else {difficulty='easy';
-          let gameTable=document.getElementById('game-table');
-          gameTable.innerHTML=
-          `
-          <tr>
-                <td id="mug-hot-0" class="card"><i class="fa-2xl fa-solid fa-question"></i></td>
-                <td id="burger-0" class="card"><i class="fa-2xl fa-solid fa-question"></i></td>
-                <td id="motorcycle-0" class="card"><i class="fa-2xl fa-solid fa-question"></i></td>
-                <td id="cake-candles-0" class="card"><i class="fa-2xl fa-solid fa-question"></i></td>
-            </tr>
-            <tr>
-                <td id="cake-candles-1" class="card"><i class="fa-2xl fa-solid fa-question"></i></td>
-                <td id="cat-1" class="card"><i class="fa-2xl fa-solid fa-question"></i></td>
-                <td id="pizza-slice-1" class="card"><i class="fa-2xl fa-solid fa-question"></i></td>
-                <td id="motorcycle-1" class="card"><i class="fa-2xl fa-solid fa-question"></i></td>
-            </tr>
-            <tr>
-                <td id="mug-hot-1" class="card"><i class="fa-2xl fa-solid fa-question"></i></td>
-                <td id="cat-0" class="card"><i class="fa-2xl fa-solid fa-question"></i></td>
-                <td id="burger-1" class="card"><i class="fa-2xl fa-solid fa-question"></i></td>
-                <td id="pizza-slice-0" class="card"><i class="fa-2xl fa-solid fa-question"></i></td>
-            </tr>
-          `;
-        items=itemsEasy;
-        keys=keysEasy;
-        noAttempts=noAttemptsEasy;
+            };
+        let keys=[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20];
+        let noAttempts=50;
         document.getElementById('attempts-left').innerHTML = noAttempts;
+        //Change card layout to hard mode by adding extra items
+        let gameTable=document.getElementById('game-table');
+        let gameTableRows=gameTable.getElementsByTagName('tr');
+        for (let i=0;i<3;i++){
+         let extraCard=document.createElement('td');
+         extraCard.id=items[i+13];
+         extraCard.className="card";
+         extraCard.innerHTML=`<i class="fa-2xl fa-solid fa-question"></i>`;
+         gameTableRows[i].appendChild(extraCard);
+        }
+        let extraRow=document.createElement('tr');
+        gameTable.appendChild(extraRow);
+        for (let i=16;i<21;i++){
+         let extraCard=document.createElement('td');
+         extraCard.id=items[i];
+         extraCard.className="card";
+         extraCard.innerHTML=`<i class="fa-2xl fa-solid fa-question"></i>`;
+         extraRow.appendChild(extraCard);
+        }
+        //Change found table to hard mode by adding extra items
         let foundTable=document.getElementById('found-table');
-        foundTable.innerHTML=
-        `
-        <tr>
-        <td id="found-pizza-slice"><i class="fa-2xl fa-solid fa-question"></i></td>
-        <td id="found-mug-hot"><i class="fa-2xl fa-solid fa-question"></i></td>
-        <td id="found-burger"><i class="fa-2xl fa-solid fa-question"></i></td>
-        </tr>
-        <tr>
-        <td id="found-cat"><i class="fa-2xl fa-solid fa-question"></i></td>
-        <td id="found-motorcycle"><i class="fa-2xl fa-solid fa-question"></i></td>
-        <td id="found-cake-candles"><i class="fa-2xl fa-solid fa-question"></i></td>
-        </tr>
-        `;
+        let foundTableRows=foundTable.getElementsByTagName('tr');
+        for (let i=0;i<4;i++){
+            let extraItem=document.createElement('td');
+            extraItem.id=`found-${items[2*i+13].slice(0,(items[2*i+13]).length-2)}`;
+            extraItem.innerHTML=`<i class="fa-2xl fa-solid fa-question"></i>`;
+            if (i<2){
+                foundTableRows[0].appendChild(extraItem);
+            } else {foundTableRows[1].appendChild(extraItem);}
+        }
+        //Reassign cards array
         cards = document.getElementsByClassName('card'); 
-        
+        let noItems=cards.length*0.5;
     }
-    });
-    
-   
-
-
-    const promptArea=document.getElementById('prompt-area');
-  
-    
-
-  
-
-    const playButton = document.getElementById("new-game");
-    playButton.addEventListener("click", function(){
-    if (difficulty==='easy'){
-        items=itemsEasy;
-        keys=[1,2,3,4,5,6,7,8,9,10,11,12];
-        noAttempts=noAttemptsEasy;
-    } else {
-        items=itemsHard;
-        keys=[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20];
-        noAttempts=noAttemptsHard;
-    }
+    //Hide home page and display game page
     gamePage.style.display='block';
     homePage.style.display='none';
     //Shuffle keys into new array//
@@ -195,7 +170,6 @@ document.addEventListener("DOMContentLoaded", function() {
         let foundItem = document.getElementById(`found-${(card.id).slice(0,(card.id).length-2)}`);
         foundItem.innerHTML=`<i class="fa-2xl fa-solid fa-question"></i>`;
         }     
-        itemsFound=0;
         //Reset attempts left
         attemptsLeft=noAttempts;
         document.getElementById('attempts-left').innerHTML = attemptsLeft;
@@ -208,8 +182,6 @@ document.addEventListener("DOMContentLoaded", function() {
         //Add event listeners to cards//
     for (let card of cards){
         card.addEventListener('click', function(){
-            //Only let the user click if New game button has been clicked//
-            if (gameInProgress){
             //Only let the user click if attempts are left
             if (attemptsLeft>0){
             //Only let the user click on a card if it hasn't been turned over//
@@ -289,7 +261,6 @@ document.addEventListener("DOMContentLoaded", function() {
                                 `<i class="fa-2xl fa-solid fa-question"></i>`;
                             }
                         } 
-                        
                         inputId=[];
                         inputName=[];
                         //Make button dissapear after it is clicked//
@@ -303,22 +274,20 @@ document.addEventListener("DOMContentLoaded", function() {
             }
         }
         }
-        }
+        
         });
     }
     });
 
     
     
-    const exitButton = document.getElementById("exit-game");
+    
     exitButton.addEventListener("click", function(){
-    gamePage.style.display='none';
-    homePage.style.display='block';
+       gamePage.style.display='none';
+       homePage.style.display='block';
     });
 
    
     
 });
-
-
 
