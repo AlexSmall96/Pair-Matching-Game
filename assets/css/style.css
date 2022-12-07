@@ -33,8 +33,7 @@ h1{
 
 #about, #instructions, #settings{
     border-style: solid;
-    border-radius:10px;
-    border-width: 1px;
+    border-color: grey;
     box-shadow: 5px 5px green;
 }
 
@@ -145,7 +144,7 @@ button{
 #leaderboard,#found-table{
     border-style: solid;
     background-image: linear-gradient(to bottom right, lightgreen, green);
-    box-shadow: 5px 5px green;;
+    box-shadow: 5px 5px green;
 }
            
     
