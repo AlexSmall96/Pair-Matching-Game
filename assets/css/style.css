@@ -229,6 +229,11 @@ button{
     #home-page {
         font-size:x-large;
     }
+    button{
+        height:80px;
+        width:200px;
+        font-size:x-large;
+    }
   }
 @media only screen and (max-width: 1040px) {
     #home-page {
