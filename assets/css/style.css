@@ -182,9 +182,13 @@ button{
     }
   }    
   @media only screen and (max-width: 800px) {
+    #game-page{
+        width:90%;
+    }
+    
     #game-table td {
-        padding:15px;
-        font-size: small;
+        padding:25px;
+        font-size: medium;
     }
     #score-area .fa-solid{
         padding:12px;
@@ -196,19 +200,23 @@ button{
   } 
   @media only screen and (max-width: 600px) {
     #game-table td {
-        padding:12px;
-        font-size: x-small;
+        padding:15px;
+        font-size: small;
     }
     #score-area .fa-solid{
         padding:5px;
-        font-size:small;
+        font-size:medium;
     }
   } 
 
   @media only screen and (max-width: 450px) {
+    #game-page{
+        width:95%;
+    }
+    
     #game-table td {
-        padding:7px;
-        font-size: xx-small;
+        padding:10px;
+        font-size: x-small;
     }
     #leaderboard td, #leaderboard th{
         padding:8px;
