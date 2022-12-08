@@ -31,7 +31,7 @@ h1{
     box-shadow: 5px 5px green;; 
 }
 
-@media only screen and (max-width: 930px) {
+@media only screen and (max-width: 1040px) {
     #game-page {
         width:90%;
     }
@@ -76,7 +76,16 @@ h1{
 #score-area .fa-solid{
     padding:30px;
 }
-@media only screen and (max-width: 530px) {
+@media only screen and (max-width: 570px) {
+    #game-table td {
+        padding:25px;
+    }
+    #score-area .fa-solid{
+        padding:20px;
+    }
+  }
+
+  @media only screen and (max-width: 440px) {
     #game-table td {
         padding:12px;
     }
