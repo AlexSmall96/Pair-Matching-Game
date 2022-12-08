@@ -31,7 +31,7 @@
                 To be in with a chance of making it to the top 3, enter your username below!
             </p>
             <p>For an extra challenge, choose hard mode and your score will be boosted but there will be more items to find!</p>
-            <p>When you're ready, enter your username and select the difficulty below, and start searching!</p>
+            <p>When you're ready, enter your username, select the difficulty and press Start Game to begin searching!</p>
         </div>
         <div class="vertical-margin horizontal-margin-single" id="settings">
             <h3>Ready to Play?</h3>
@@ -39,12 +39,16 @@
             <input id="username" type="text" name="username">
            <p>Select Difficulty: </p>
            <div>
-            <p>Easy
-                <input type="checkbox" id="switch"
-                class="checkbox"/>
-                <label for="switch" class="toggle"></label>
-            Hard
-            </p>
+                <table class="horizontal-margin-single">
+                    <tr>
+                        <td>Easy</td>
+                        <td><input type="checkbox" id="switch"
+                            class="checkbox"/>
+                            <label for="switch" class="toggle"></label>
+                        </td>
+                        <td>Hard</td>
+                    </tr>
+                </table>
         </div>
         </div>
         

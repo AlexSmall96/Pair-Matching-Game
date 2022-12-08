@@ -149,9 +149,7 @@ button{
     box-shadow: 5px 5px green;
 }
 
-#leaderboard {
-    width:60%;
-}
+
 
 
 
@@ -191,6 +189,9 @@ button{
     #score-area .fa-solid{
         padding:12px;
         font-size:medium;
+    }
+    #leaderboard {
+        width:60%;
     }
   } 
   @media only screen and (max-width: 600px) {
