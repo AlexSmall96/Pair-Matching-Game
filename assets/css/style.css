@@ -14,7 +14,7 @@ h1{
     color:blue;
 }
 #home-page{
-    width:50%;
+    width:60%;
     border-style: solid;
     border-radius:10px;
     background-image: linear-gradient(to bottom right, lightgreen, green);
@@ -36,16 +36,30 @@ h1{
     background-image: linear-gradient(to bottom right, lightgreen, green);
     box-shadow: 5px 5px green;; 
 }
-
+@media only screen and (min-width: 2000px) {
+    #home-page {
+        font-size:x-large;
+    }
+  }
 @media only screen and (max-width: 1040px) {
     #game-page {
         width:90%;
+    }
+  }
+  @media only screen and (max-width: 400px) {
+    #leaderboard {
+        width:70%;
     }
   }
 
   @media only screen and (max-width: 1040px) {
     #home-page {
         font-size:small;
+    }
+  }
+  @media only screen and (max-width: 1300px) {
+    #home-page {
+        width:75%;
     }
   }
   @media only screen and (max-width: 810px) {
