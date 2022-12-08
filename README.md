@@ -49,7 +49,6 @@ Alex Small
  
 ### Media Queries ###
 
-The site contains media queries to resize hero, about and bookings images at a certain screen width. This helps to improve the flow of the website at smaller screen sizes and make it easier to follow for the user. See testing section for screenshots.
 
 ## Future Features
 

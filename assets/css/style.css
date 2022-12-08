@@ -36,38 +36,6 @@ h1{
     background-image: linear-gradient(to bottom right, lightgreen, green);
     box-shadow: 5px 5px green;; 
 }
-@media only screen and (min-width: 2000px) {
-    #home-page {
-        font-size:x-large;
-    }
-  }
-@media only screen and (max-width: 1040px) {
-    #game-page {
-        width:90%;
-    }
-  }
-  @media only screen and (max-width: 400px) {
-    #leaderboard {
-        width:70%;
-    }
-  }
-
-  @media only screen and (max-width: 1040px) {
-    #home-page {
-        font-size:small;
-    }
-  }
-  @media only screen and (max-width: 1300px) {
-    #home-page {
-        width:75%;
-    }
-  }
-  @media only screen and (max-width: 810px) {
-    #home-page {
-        width:90%;
-    }
-  }
-
 
 #about, #instructions, #settings{
     border-style: solid;
@@ -103,23 +71,7 @@ h1{
 #score-area .fa-solid{
     padding:30px;
 }
-@media only screen and (max-width: 570px) {
-    #game-table td {
-        padding:25px;
-    }
-    #score-area .fa-solid{
-        padding:20px;
-    }
-  }
 
-  @media only screen and (max-width: 440px) {
-    #game-table td {
-        padding:12px;
-    }
-    #score-area .fa-solid{
-        padding:16px;
-    }
-  }
 
 #guess-again{
     margin:15px;
@@ -196,9 +148,95 @@ button{
     background-image: linear-gradient(to bottom right, lightgreen, green);
     box-shadow: 5px 5px green;
 }
-           
 
-@media only screen and (max-width: 530px) {
+#leaderboard {
+    width:60%;
+}
+
+
+
+/*Media queries for game page*/
+@media only screen and (max-width: 570px) {
+    #game-table td {
+        padding:25px;
+    }
+    #score-area .fa-solid{
+        padding:20px;
+    }
+  }
+
+  @media only screen and (min-width: 2000px) {
+    #game-page {
+       font-size:x-large;
+    }
+}
+@media only screen and (max-width: 1400px) {
+    #game-page {
+        width:75%;
+    }
+  }
+  @media only screen and (max-width: 980px) {
+    #game-table td {
+        padding:25px;
+    }
+    #score-area .fa-solid{
+        padding:16px;
+    }
+  }    
+  @media only screen and (max-width: 800px) {
+    #game-table td {
+        padding:15px;
+        font-size: small;
+    }
+    #score-area .fa-solid{
+        padding:12px;
+        font-size:medium;
+    }
+  } 
+  @media only screen and (max-width: 600px) {
+    #game-table td {
+        padding:12px;
+        font-size: x-small;
+    }
+    #score-area .fa-solid{
+        padding:5px;
+        font-size:small;
+    }
+  } 
+
+  @media only screen and (max-width: 450px) {
+    #game-table td {
+        padding:7px;
+        font-size: xx-small;
+    }
+    #leaderboard td, #leaderboard th{
+        padding:8px;
+    }
+
+  }      
+
+/*Media queries for home page*/
+  @media only screen and (min-width: 2000px) {
+    #home-page {
+        font-size:x-large;
+    }
+  }
+@media only screen and (max-width: 1040px) {
+    #home-page {
+        font-size:small;
+    }
+  }
+  @media only screen and (max-width: 1300px) {
+    #home-page {
+        width:75%;
+    }
+  }
+  @media only screen and (max-width: 810px) {
+    #home-page {
+        width:90%;
+    }
+  }
+  @media only screen and (max-width: 530px) {
     .toggle {
         width:60px;
         height:32px;
