@@ -21,7 +21,13 @@ h1{
     padding:15px;
     box-shadow: 5px 5px green;
 }
+#settings{
+    width:50%;
+}
 
+#username{
+    width:60%;
+}
 #game-page{
     display:none;
     width:50%;
@@ -36,17 +42,24 @@ h1{
         width:90%;
     }
   }
- 
+
+  @media only screen and (max-width: 1040px) {
+    #home-page {
+        font-size:small;
+    }
+  }
+  @media only screen and (max-width: 810px) {
+    #home-page {
+        width:90%;
+    }
+  }
 
 
 #about, #instructions, #settings{
     border-style: solid;
     border-color: grey;
     box-shadow: 5px 5px green;
-}
-
-#settings{
-    width:25%;
+    padding:10px;
 }
 
 
@@ -170,5 +183,17 @@ button{
     box-shadow: 5px 5px green;
 }
            
-    
 
+@media only screen and (max-width: 530px) {
+    .toggle {
+        width:60px;
+        height:32px;
+    }
+    .toggle:after{
+        width:30px;
+        height:30px;
+    }
+    .checkbox:checked + .toggle::after {
+        left : 29px;
+    }
+  }
