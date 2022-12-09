@@ -4,16 +4,19 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+    <meta name="keywords" content="pairs, pair matching game, memory game, pelmanism">
     <link rel="stylesheet" href="assets/css/style.css">
 
     <title>Document</title>
 </head>
 <body>
+    <!--Header-->
     <h1>
         Pairs
     </h1>
+    <!-- Home page-->
     <div class="vertical-margin horizontal-margin-single" id="home-page">
+        <!-- About section-->
         <div class="vertical-margin horizontal-margin-single" id="about">
             <p><i class="fa-solid fa-brain"></i></p>
             <p>Can you find all the matching pairs? This classic game will test your
@@ -23,6 +26,7 @@
                 A great challenge for all ages.
             </p>
         </div>
+        <!-- Instructions-->
         <div class="vertical-margin horizontal-margin-single" id="instructions"><h2>Instructions</h2>
             <p>Click two cards at a time to turn them over and reveal the hidden item.</p>
             <p>If the cards match, keep turning! If they don't, click the guess again button to try again.</p>
@@ -33,6 +37,7 @@
             <p>For an extra challenge, choose hard mode and your score will be boosted but there will be more items to find!</p>
             <p>When you're ready, enter your username, select the difficulty and press Start Game to begin searching!</p>
         </div>
+        <!-- Settings area-->
         <div class="vertical-margin horizontal-margin-single" id="settings">
             <h3>Ready to Play?</h3>
             <label for="username">Enter Username: </label>
@@ -51,16 +56,14 @@
                 </table>
         </div>
         </div>
-        
             <div class="vertical-margin horizontal-margin-single">
                 <button id="new-game">Start Game</button>
             </div>
     </div>
+    <!-- Game Page-->
     <div class="vertical-margin horizontal-margin-single" id="game-page">
-    
-    
-   
     <div>
+        <!-- Cards Area-->
         <table id="game-table" class ="vertical-margin horizontal-margin-single">
             <tr>
                 <td id="mug-hot-0" class="card"><i class="fa-2xl fa-solid fa-question"></i></td>
@@ -82,14 +85,15 @@
             </tr>
         </table>
     </div>
+     <!-- Prompt Area-->
     <div id="prompt-area" class="vertical-margin horizontal-margin-single">
         <p>Pick a Card!</p>
     </div>
+    <!-- Attempts Left-->
     <div class="vertical-margin horizontal-margin-single">
         <span>Attempts Left: </span><span id="attempts-left">15</span>
-       </div>
-
-    
+    </div>
+    <!-- Items Found Area-->
     <div class="vertical-margin horizontal-margin-single" id="score-area">
         <span>Items Found:</span>
         <table class="vertical-margin horizontal-margin-single" id="found-table">
@@ -105,14 +109,12 @@
         </tr>
     </table>
     </div>
-    <script src="https://kit.fontawesome.com/19e39a1d6d.js" crossorigin="anonymous"></script>
-    <script src="assets/js/script.js"></script>
+    <!-- Exit Game Button-->
     <div class="vertical-margin horizontal-margin-single">
         <button id="exit-game">Exit Game</button>
-       </div>
-    
-   <div>
+    </div>
     <div>
+    <!-- Leaderboard-->
     <h3>Leaderboard</h3>
       <table class="vertical-margin horizontal-margin-single" id="leaderboard">
         <tr>
@@ -137,8 +139,10 @@
         </tr>
        </table>
    </div>
- 
-
 </div>
+<!-- Font Awesome Kit-->
+<script src="https://kit.fontawesome.com/19e39a1d6d.js" crossorigin="anonymous"></script>
+<!-- Link to script.js-->
+<script src="assets/js/script.js"></script>
 </body>
 </html>

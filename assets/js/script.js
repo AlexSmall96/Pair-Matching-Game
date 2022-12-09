@@ -270,7 +270,7 @@ document.addEventListener("DOMContentLoaded", function() {
                         gamePage.style.display='none';
                         homePage.style.display='block';
                         about.style.display='none';
-                        instructions.style.display='none'
+                        instructions.style.display='none';
                         });
                     //Update users score if new high score is achieved and username was entered
                     if (username){
@@ -313,7 +313,7 @@ document.addEventListener("DOMContentLoaded", function() {
                         gamePage.style.display='none';
                         homePage.style.display='block';
                         about.style.display='none';
-                        instructions.style.display='none'
+                        instructions.style.display='none';
                         });
                   } else if (attemptsLeft>0){
                     //Let button appear to guess again//

@@ -225,3 +225,17 @@ As a user, I would like to :
 ### HTML Validation
 
 ### JS Validation 
+
+The script.js file passes through [JSHint](https://jshint.com/) without any errors. The validator proudces the following metrics: 
+
+- There are 10 functions in this file.
+
+- Function with the largest signature take 2 arguments, while the median is 0.
+
+- Largest function has 41 statements in it, while the median is 5.5.
+
+- The most complex function has a cyclomatic complexity value of 15 while the median is 1.
+
+The validator also gives a warning : "	Functions declared within loops referencing an outer scoped variable may lead to confusing semantics. (attemptsLeft, card, inputId, inputName, itemsFound, noItems, username, scores, difficulty)"
+
+I chose to ignore this warning as I was confident in the logic of my code that the way the functions and variables declared wouldn't affect the functionality. Further developments of this project might involve looking into declaring the function in a way that doesn't reference outer scoped variables.
