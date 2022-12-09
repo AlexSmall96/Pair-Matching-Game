@@ -214,19 +214,14 @@ As a user, I would like to :
 - Be able to exit the game or play again at the end of each game
    - At the end of the game the user has the option to start a new game, by taking them to the settings menu regardless of if they win or lose. At any point in the game the user can exit to the home screen.
 
-
-
-
 ## Validation Testing
-
 ### CSS Validation
-
-
+The style.css file passes through official [CSS validator](https://jigsaw.w3.org/css-validator/) without any errors.
+![](assets/documentation/images/css-pass.png)
 ### HTML Validation
 The index.html file passes through the official [HTML validator](https://validator.w3.org/) without any errors.
 ![](assets/documentation/images/html-pass.png)
 ### JS Validation 
-
 The script.js file passes through [JSHint](https://jshint.com/) without any errors. The validator proudces the following metrics: 
 
 - There are 10 functions in this file.
