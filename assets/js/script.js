@@ -195,7 +195,6 @@ document.addEventListener("DOMContentLoaded", function() {
     let oldId;
     let cards = document.getElementsByClassName('card'); 
     let noItems=keys.length*0.5;
-    console.log(cards);
     for (let card of cards){
         //Turn all cards over
         card.innerHTML=`<i class="fa-2xl fa-solid fa-question"></i>`;
