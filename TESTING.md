@@ -223,7 +223,8 @@ As a user, I would like to :
 
 
 ### HTML Validation
-
+The index.html file passes through the official [HTML validator](https://validator.w3.org/) without any errors.
+![](assets/documentation/images/html-pass.png)
 ### JS Validation 
 
 The script.js file passes through [JSHint](https://jshint.com/) without any errors. The validator proudces the following metrics: 
@@ -239,3 +240,5 @@ The script.js file passes through [JSHint](https://jshint.com/) without any erro
 The validator also gives a warning : "	Functions declared within loops referencing an outer scoped variable may lead to confusing semantics. (attemptsLeft, card, inputId, inputName, itemsFound, noItems, username, scores, difficulty)"
 
 I chose to ignore this warning as I was confident in the logic of my code that the way the functions and variables declared wouldn't affect the functionality. Further developments of this project might involve looking into declaring the function in a way that doesn't reference outer scoped variables.
+
+![](assets/documentation/images/JS-pass.png)
