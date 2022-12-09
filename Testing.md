@@ -13,13 +13,28 @@
 | 1.6    | User Input       | User can click 'Start Game' button  | Button is clickable                                        | Pass      |
 | 1.7    | Logic            | 'Start Game' button loads game page | Game page appears upon clicking button                     | Pass      |
 
-- 1.1-1.3
-![](assets/documentation/images/1.1.png)
-- 1.4 
-![](assets/documentation/images/1.4.png)
-- 1.5 
-![](assets/documentation/images/1.5a.png)
-![](assets/documentation/images/1.5b.png)
+
+
+
+
+
+
+
+#### Screenshots where applicable for Home Page tests with corresponding test Numbers.
+
+1.1|
+|:-------------------------:
+![](assets/documentation/images/1.1.png) |       
+
+
+
+
+
+1.4| 1.5
+:-------------------------:|:-------------------------:
+![](assets/documentation/images/1.4.png) | ![](assets/documentation/images/1.5a.png)![](assets/documentation/images/1.5b.png)
+
+
 #### Game Page
 | Test | Category        | Expected Result                                                                      | Actual Result                                                                                              | Pass/Fail |
 |------|-----------------|--------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------|-----------|
@@ -33,10 +48,14 @@
 | 2.8    | Logic           | 'Found Items' resets to none                                                         | In both difficulty modes, all icons in box load as question marks                                          | Pass      |
 | 2.9    | Logic           | Prompt under cards loads loads as 'Pick a Card!'                                     | Text appears as expected                                                                                   | Pass      |
 | 2.10    | Logic           | Leaderboard is blank on first loading, even if username has been entered             | Username can be entered and leaderboard is blank when game is first loaded.                                | Pass      |
-- 1.7, 2.1, 2.2, 2.3, 2.4, 2.5, 2.7, 2.8, 2.9, 2.10
-![](assets/documentation/images/1.7.png)
-- 2.6, 2.7, 2.8, 2.9, 2.10
-![](assets/documentation/images/2.6.png)
+
+#### Screenshots where applicable for Game Page tests with corresponding test Numbers.
+
+1.7, 2.1, 2.2, 2.3, 2.4, 2.5, 2.7, 2.8, 2.9, 2.10| 2.6, 2.7, 2.8, 2.9, 2.10
+:-------------------------:|:-------------------------:
+![](assets/documentation/images/1.7.png) | ![](assets/documentation/images/2.6.png)
+
+
 ### Game Play
 #### Card Area
 | Test | Category       | Expected Result                                                                                                                                                | Actual Result                                                                                                                                            | Pass/Fail |
@@ -65,29 +84,41 @@
 | 3.22 | Logic      | Username and difficulty can be changed for a new game |If difficulty is changed, card layout, items found box and attempts left value all change accordingly|     Pass      |
 | 3.23 | Logic      | User can click exit game button at any point and return to home screen |Exit game button returns user to home screen at any point as expected|     Pass      |
 
-- 3.1, 3.2
-![](assets/documentation/images/3.2.png)
-- 3.6
-![](assets/documentation/images/3.6.png)
-- 3.9
-![](assets/documentation/images/3.9.png)
-- 3.10
-![](assets/documentation/images/3.10.png)
-- 3.12, 3.13, 3.14,3.15
-![](assets/documentation/images/3.12.png)
-- 3.16
-![](assets/documentation/images/3.16.png)
-- 3.19
-![](assets/documentation/images/3.19.png)
+#### Screenshots where applicable for Card Area tests with corresponding test Numbers.
+
+3.1, 3.2| 3.6
+:-------------------------:|:-------------------------:
+![](assets/documentation/images/3.2.png) | ![](assets/documentation/images/3.6.png)
+
+3.9| 3.10
+:-------------------------:|:-------------------------:
+![](assets/documentation/images/3.9.png) | ![](assets/documentation/images/3.10.png)
+
+3.12, 3.13, 3.14,3.15| 3.16
+:-------------------------:|:-------------------------:
+![](assets/documentation/images/3.12.png) | ![](assets/documentation/images/3.16.png)
+
+
+3.19|
+:-------------------------:|
+![](assets/documentation/images/3.19.png) |
+
+
 #### Found Items Area
 | Test | Category | Expected Result                                                  | Actual Result                                                                                                                   | Pass/Fail |
 |------|----------|------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------|-----------|
 | 4.1  | Logic    | After an attempt has been made, the Attempts Left decreases by 1 | Once the user has selected two cards, the value drops by 1                                                                      | Pass      |
 | 4.2  | Logic    | If cards match, the item appears in Items Found box              | Once the user has selected two cards and they match, a question mark in Items Found box is replaced with the corresponding item | Pass      |
 
-- 4.1, 4.2
+#### Screenshots where applicable for Found Items area with corresponding test Numbers.
 
-![](assets/documentation/images/4.1.png)
+
+4.1, 4.2|
+:-------------------------:|
+![](assets/documentation/images/4.1.png) | 
+
+
+
 #### Leaderboard
 | Test | Category | Expected Result                                                                                                                                             | Actual Result                                                                                                              | Pass/Fail |
 |------|----------|-------------------------------------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------|-----------|
@@ -100,32 +131,30 @@
 | 5.7  | Logic    | If a user attempts the game again with the same username, and beats their previous score, this is overwritten in the leaderboard                            | User enters a previously used username, achieves a higher score and overwrites previous score on leader board              | Pass      |
 | 5.8  | Logic    | If a user attempts the game again with the same username on a different difficulty, and beats their previous score, this is overwritten on the leader board | User enters previously used username, selects hard mode and beats previous score, new score is overwritten on leader board | Pass      |
 
+#### Screenshots where applicable for Leaderboard area with corresponding test Numbers.
 
--5.1 
-![](assets/documentation/images/5.1.png)
+5.1|
+:-------------------------:|
+![](assets/documentation/images/5.1.png) |
 
--5.2 
-![](assets/documentation/images/5.2b.png)
+| 5.2
+|:-------------------------:
+| ![](assets/documentation/images/5.2a.png)![](assets/documentation/images/5.2b.png)
 
--5.3
-![](assets/documentation/images/5.3.png)
+5.3| 5.4
+:-------------------------:|:-------------------------:
+![](assets/documentation/images/5.3.png) | ![](assets/documentation/images/5.4.png)
 
--5.4
-![](assets/documentation/images/5.4.png)
+5.5| 5.6
+:-------------------------:|:-------------------------:
+![](assets/documentation/images/5.5.png) | ![](assets/documentation/images/5.6.png)
 
--5.5
-![](assets/documentation/images/5.5.png)
+5.7| 5.8
+:-------------------------:|:-------------------------:
+![](assets/documentation/images/5.5.png) | ![](assets/documentation/images/5.6.png)
 
--5.6
-![](assets/documentation/images/5.6.png)
 
--5.7
-![](assets/documentation/images/5.7.png)
 
--5.8
-![](assets/documentation/images/5.8.png)
-
-#### Leaderboard
 ### Responsiveness
 
 ### User Stories Testing
