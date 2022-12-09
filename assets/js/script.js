@@ -30,7 +30,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 gameTable.innerHTML=
                 `
                 <tr>
-                <td id="pizza-slice-0 class="card"><i class="fa-2xl fa-solid fa-question"></i></td>
+                <td id="pizza-slice-0" class="card"><i class="fa-2xl fa-solid fa-question"></i></td>
                 <td id="pizza-slice-1" class="card"><i class="fa-2xl fa-solid fa-question"></i></td>
                 <td id="mug-hot-0" class="card"><i class="fa-2xl fa-solid fa-question"></i></td>
                 <td id="mug-hot-1" class="card"><i class="fa-2xl fa-solid fa-question"></i></td>
@@ -77,7 +77,7 @@ document.addEventListener("DOMContentLoaded", function() {
             </tr>
             `;
             
-             
+
         } else {difficulty='easy';
           let gameTable=document.getElementById('game-table');
           gameTable.innerHTML=
@@ -172,7 +172,7 @@ document.addEventListener("DOMContentLoaded", function() {
             20:"carrot-1"
             };
         keys=[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20];
-        noAttempts=50;
+        noAttempts=35;
         
     }
     document.getElementById('attempts-left').innerHTML = noAttempts;
@@ -195,6 +195,7 @@ document.addEventListener("DOMContentLoaded", function() {
     let oldId;
     let cards = document.getElementsByClassName('card'); 
     let noItems=keys.length*0.5;
+    console.log(cards);
     for (let card of cards){
         //Turn all cards over
         card.innerHTML=`<i class="fa-2xl fa-solid fa-question"></i>`;
