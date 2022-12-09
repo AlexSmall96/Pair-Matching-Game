@@ -1,7 +1,6 @@
 ## Testing
 ### Manual Testing
 #### Home Page 
-
 | Test | Category         | Expected Result                     | Actual Result                                              | Pass/Fail |
 |------|------------------|-------------------------------------|------------------------------------------------------------|-----------|
 | 1.1   | Deployed Website | Home Page loads without any issues  | Home Page loads as expected                                | Pass      |
@@ -13,26 +12,14 @@
 | 1.7    | Logic            | 'Start Game' button loads game page | Game page appears upon clicking button                     | Pass      |
 
 
-
-
-
-
-
-
 #### Screenshots where applicable for Home Page tests with corresponding test Numbers.
-
 1.1|
 |:-------------------------:
 ![](assets/documentation/images/1.1.png) |       
 
-
-
-
-
 1.4| 1.5
 :-------------------------:|:-------------------------:
 ![](assets/documentation/images/1.4.png) | ![](assets/documentation/images/1.5a.png)![](assets/documentation/images/1.5b.png)
-
 
 #### Game Page
 | Test | Category        | Expected Result                                                                      | Actual Result                                                                                              | Pass/Fail |
@@ -49,11 +36,9 @@
 | 2.10    | Logic           | Leaderboard is blank on first loading, even if username has been entered             | Username can be entered and leaderboard is blank when game is first loaded.                                | Pass      |
 
 #### Screenshots where applicable for Game Page tests with corresponding test Numbers.
-
 1.7, 2.1, 2.2, 2.3, 2.4, 2.5, 2.7, 2.8, 2.9, 2.10| 2.6, 2.7, 2.8, 2.9, 2.10
 :-------------------------:|:-------------------------:
 ![](assets/documentation/images/1.7.png) | ![](assets/documentation/images/2.6.png)
-
 
 ### Game Play
 #### Card Area
@@ -85,7 +70,6 @@
 | 3.24 | Logic      | Play again button takes user to same settings only home screen as try again button |Button behaves as expected and new game can be loaded with correct functionality|     Pass      |
 
 #### Screenshots where applicable for Card Area tests with corresponding test Numbers.
-
 3.1, 3.2| 3.6
 :-------------------------:|:-------------------------:
 ![](assets/documentation/images/3.2.png) | ![](assets/documentation/images/3.6.png)
@@ -103,7 +87,6 @@
 :-------------------------:|
 ![](assets/documentation/images/3.19.png) |
 
-
 #### Found Items Area
 | Test | Category | Expected Result                                                  | Actual Result                                                                                                                   | Pass/Fail |
 |------|----------|------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------|-----------|
@@ -111,13 +94,9 @@
 | 4.2  | Logic    | If cards match, the item appears in Items Found box              | Once the user has selected two cards and they match, a question mark in Items Found box is replaced with the corresponding item | Pass      |
 
 #### Screenshots where applicable for Found Items area with corresponding test Numbers.
-
-
 4.1, 4.2|
 :-------------------------:|
 ![](assets/documentation/images/4.1.png) | 
-
-
 
 #### Leaderboard
 | Test | Category | Expected Result                                                                                                                                             | Actual Result                                                                                                              | Pass/Fail |
@@ -132,7 +111,6 @@
 | 5.8  | Logic    | If a user attempts the game again with the same username on a different difficulty, and beats their previous score, this is overwritten on the leader board | User enters previously used username, selects hard mode and beats previous score, new score is overwritten on leader board | Pass      |
 
 #### Screenshots where applicable for Leaderboard area with corresponding test Numbers.
-
 5.1|
 :-------------------------:|
 ![](assets/documentation/images/5.1.png) |
@@ -156,13 +134,11 @@
 
 
 ### Responsiveness
-
 - The site has been tested for responsiveness on a range of browser sizes. These range in width from 320px to 2560px. Both pages are fully responsive in both easy and hard mode, maintaining their structural integrity across all browser sizes. 
 
 - The site uses media queries to change the width of the game page, font size, icon size and card padding depending on the browser size.
 
 ##### Issues Found
-
 - At narrow browser sizes (<450px in width), the card area begins to look cluttered. This is due to the number of cards that are involved with hard mode. The easy mode layout has to accomdate this as the media queries apply to both easy and hard mode. The game also requries extra space in the margins of the card area, as the cards increase in width when turned over due to the question mark icon being narrower than the others.
 
 - As a fix for this issue, further developments of this project might involve using javascript to make the site responsive at these small browser sizes, allowing the details of the media queries to be dependent on the difficulty level chosen.
