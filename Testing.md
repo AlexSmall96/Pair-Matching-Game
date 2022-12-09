@@ -157,6 +157,43 @@
 
 ### Responsiveness
 
+- The site has been tested for responsiveness on a range of browser sizes. These range in width from 320px to 2560px. Both pages are fully responsive in both easy and hard mode, maintaining their structural integrity across all browser sizes. 
+
+- The site uses media queries to change the width of the game page, font size, icon size and card padding depending on the browser size.
+
+##### Issues Found
+
+- At narrow browser sizes (<450px in width), the card area begins to look cluttered. This is due to the number of cards that are involved with hard mode. The easy mode layout has to accomdate this as the media queries apply to both easy and hard mode. The game also requries extra space in the margins of the card area, as the cards increase in width when turned over due to the question mark icon being narrower than the others.
+
+- As a fix for this issue, further developments of this project might involve using javascript to make the site responsive at these small browser sizes, allowing the details of the media queries to be dependent on the difficulty level chosen.
+
+- Another solution may be to ensure the cards stay at the same width even when turned over. This would mean there is less margin space needed around the card table.
+
+Home Page viewed on a Mobile (320px) | Home Page viewed on a Tablet (768px)
+:-------------------------:|:-------------------------:
+![](assets/documentation/images/Mobile-Home.png) | ![](assets/documentation/images/tablet-home.png)
+
+Home Page viewed on a Laptop (1440px)| 
+:-------------------------:|
+![](assets/documentation/images/laptop-home.png) |
+
+
+Game Page - Easy mode viewed on a Mobile (320px) | Game Page - Easy modeviewed on a Tablet (768px) 
+:-------------------------:|:-------------------------:
+![](assets/documentation/images/mobile-game-easy.png) | ![](assets/documentation/images/tablet-game-easy.png))
+
+Game Page - Easy mode viewed on a Laptop (1440px)| 
+:-------------------------:|
+![](assets/documentation/images/laptop-game-easy.png) |
+
+Game Page - Hard mode viewed on a Mobile (320px) | Game Page - Hard modeviewed on a Tablet (768px) 
+:-------------------------:|:-------------------------:
+![](assets/documentation/images/mobile-game-hard.png) | ![](assets/documentation/images/tablet-game-hard.png))
+
+Game Page - Hard mode viewed on a Laptop (1440px)| 
+:-------------------------:|
+![](assets/documentation/images/laptop-game-hard.png) |
+
 ### User Stories Testing
 
 ## Validation Testing
