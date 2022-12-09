@@ -6,6 +6,8 @@ body{
     text-align: center;
     font-family: 'Electrolize', sans-serif;
     background-image: linear-gradient(to bottom right, lightblue, white);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
 }
 .vertical-margin{
     margin-top:20px;

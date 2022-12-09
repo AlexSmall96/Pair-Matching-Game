@@ -6,10 +6,9 @@ introduction
 
 
 ## Repository 
-
+[](https://github.com/AlexSmall96/Pairs)
 
 ## Author 
-
 Alex Small
 
 
@@ -44,24 +43,16 @@ As a site owner, I would like to :
 - Express ideas freely and creatively
 
 ## Design Choices
-
-
 ### Colors
 
 ### Typography
-
-
 
 ### Imagery
 
 
 ## Site Structure and Features
 
-
-
- 
 ### Media Queries ###
-
 
 ## Future Features
 
@@ -92,8 +83,14 @@ The site was deployed to GitHub pages. The steps to deploy are as follows:
 
 ## Media
 
-
-
 ## Code
+The resources used for this project were the Javascript Essentials module, HTML & CSS Essentials module, the Love Running and Love Maths walkthrough projects, along with some external resources:
 
+- The code which sorts the leaderboard based on users scores (Line 288 of script.js) is taken from the following resource: [](https://medium.com/@gmcharmy/sort-objects-in-javascript-e-c-how-to-get-sorted-values-from-an-object-142a9ae7157c)
 
+- The difficulty switch on the home page is styled with inspiration from the following resource: [](https://www.geeksforgeeks.org/how-to-create-toggle-switch-by-using-html-and-css/)
+
+- The CSS background effects were taken from the following resources [](https://stackoverflow.com/questions/2869212/css3-gradient-background-set-on-body-doesnt-stretch-but-instead-repeats/),[](https://www.w3schools.com/css/css3_gradients.asp)  
+
+## Acknowledgements 
+I would like to thank my mentor Harry Dhillon for his encouraging support and detailed feedback throughout this project.
