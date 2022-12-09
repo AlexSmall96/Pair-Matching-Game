@@ -33,9 +33,10 @@
 | 2.8    | Logic           | 'Found Items' resets to none                                                         | In both difficulty modes, all icons in box load as question marks                                          | Pass      |
 | 2.9    | Logic           | Prompt under cards loads loads as 'Pick a Card!'                                     | Text appears as expected                                                                                   | Pass      |
 | 2.10    | Logic           | Leaderboard is blank on first loading, even if username has been entered             | Username can be entered and leaderboard is blank when game is first loaded.                                | Pass      |
-- 1.7,2.1,2.2,2.3,2.4,2.5
-[](assets/documentation/images/1.7.png)
--
+- 1.7, 2.1, 2.2, 2.3, 2.4, 2.5, 2.7, 2.8, 2.9, 2.10
+![](assets/documentation/images/1.7.png)
+- 2.6, 2.7, 2.8, 2.9, 2.10
+![](assets/documentation/images/2.6.png)
 ### Game Play
 #### Card Area
 | Test | Category       | Expected Result                                                                                                                                                | Actual Result                                                                                                                                            | Pass/Fail |
@@ -55,14 +56,25 @@
 | 3.13 | Screen Loading | Header remains above home page area when try again button is clicked                                                                                           | Header remains as expected                                                                                                                               |  Pass         |
 | 3.14 | Screen Loading | Username, difficulty switch and Start Game button all appear when try again button is clicked    |Features appear as expected|Pass|
 | 3.15 | User Input | Username can be inputted into box on settings only version of home page     | Input accepts any value                                                                           | Pass      |
-| 3.15 | User Input | Difficulty switch can be toggled on settings only version of home page      | Switch can be toggled between easy and hard as expected                                           | Pass      |
-| 3.16 | User Input | Start Game button can be clicked on settings only version of home page      | Button can be clicked and loads game page as expected                                             | Pass      |
-| 3.17 | Logic      | Difficulty switch on settings only version of home page changes card layout | When game page is loaded, difficulty settings act in the same way as starting from full home page |     Pass      |
-| 3.18 | Logic      | Once all items are found, a well done message appears and user cannot change any further cards | When game is won, message appears as expected, cards cannot be changed and exit game button can be clicked|     Pass      |
-| 3.19 | Logic      | Exit game button takes the user back to the home screen and all settings can be changed |Home screen loads as expected and username and difficulty can be selected|     Pass      |
-| 3.19 | Logic      | If try again button was clicked during game, exit game button takes the user back to full home screen |Home screen loads in full after game with try again button clicked|     Pass      |
-| 3.20 | Logic      | Username and difficulty can be changed for a new game |If difficulty is changed, card layout, items found box and attempts left value all change accordingly|     Pass      |
-| 3.21 | Logic      | User can click exit game button at any point and return to home screen |Exit game button returns user to home screen at any point as expected|     Pass      |
+| 3.16 | User Input | Difficulty switch can be toggled on settings only version of home page      | Switch can be toggled between easy and hard as expected                                           | Pass      |
+| 3.17 | User Input | Start Game button can be clicked on settings only version of home page      | Button can be clicked and loads game page as expected                                             | Pass      |
+| 3.18 | Logic      | Difficulty switch on settings only version of home page changes card layout | When game page is loaded, difficulty settings act in the same way as starting from full home page |     Pass      |
+| 3.19 | Logic      | Once all items are found, a well done message appears and user cannot change any further cards | When game is won, message appears as expected, cards cannot be changed and exit game button can be clicked|     Pass      |
+| 3.20 | Logic      | Exit game button takes the user back to the home screen and all settings can be changed |Home screen loads as expected and username and difficulty can be selected|     Pass      |
+| 3.21 | Logic      | If try again button was clicked during game, exit game button takes the user back to full home screen |Home screen loads in full after game with try again button clicked|     Pass      |
+| 3.22 | Logic      | Username and difficulty can be changed for a new game |If difficulty is changed, card layout, items found box and attempts left value all change accordingly|     Pass      |
+| 3.23 | Logic      | User can click exit game button at any point and return to home screen |Exit game button returns user to home screen at any point as expected|     Pass      |
+
+- 3.1, 3.2
+![](assets/documentation/images/3.2.png)
+- 3.6
+![](assets/documentation/images/3.6.png)
+- 3.9
+![](assets/documentation/images/3.9.png)
+- 3.10
+![](assets/documentation/images/3.10.png)
+- 3.12, 3.13, 3.14,3.15
+![](assets/documentation/images/3.12.png)
 #### Found Items Area
 | Test | Category | Expected Result                                                  | Actual Result                                                                                                                   | Pass/Fail |
 |------|----------|------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------|-----------|
