@@ -147,7 +147,7 @@ document.addEventListener("DOMContentLoaded", function() {
             12:"cake-candles-1"
             };
         keys=[1,2,3,4,5,6,7,8,9,10,11,12];
-        noAttempts=10;
+        noAttempts=25;
     } else {
         items={
             1:"pizza-slice-0",
