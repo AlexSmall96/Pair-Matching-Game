@@ -75,12 +75,19 @@
 ![](assets/documentation/images/3.10.png)
 - 3.12, 3.13, 3.14,3.15
 ![](assets/documentation/images/3.12.png)
+- 3.16
+![](assets/documentation/images/3.16.png)
+- 3.19
+![](assets/documentation/images/3.19.png)
 #### Found Items Area
 | Test | Category | Expected Result                                                  | Actual Result                                                                                                                   | Pass/Fail |
 |------|----------|------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------|-----------|
 | 4.1  | Logic    | After an attempt has been made, the Attempts Left decreases by 1 | Once the user has selected two cards, the value drops by 1                                                                      | Pass      |
 | 4.2  | Logic    | If cards match, the item appears in Items Found box              | Once the user has selected two cards and they match, a question mark in Items Found box is replaced with the corresponding item | Pass      |
 
+- 4.1, 4.2
+
+![](assets/documentation/images/4.1.png)
 #### Leaderboard
 | Test | Category | Expected Result                                                                                                                                             | Actual Result                                                                                                              | Pass/Fail |
 |------|----------|-------------------------------------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------|-----------|
@@ -92,8 +99,33 @@
 | 5.6  | Logic    | If a user completes the game on hard mode, their score is multiplied by 1.5 and is ranked on the leader board as usual                                      | User completes game on hard mode and score is multiplied by 1.5, displacing current 1st place                              | Pass      |
 | 5.7  | Logic    | If a user attempts the game again with the same username, and beats their previous score, this is overwritten in the leaderboard                            | User enters a previously used username, achieves a higher score and overwrites previous score on leader board              | Pass      |
 | 5.8  | Logic    | If a user attempts the game again with the same username on a different difficulty, and beats their previous score, this is overwritten on the leader board | User enters previously used username, selects hard mode and beats previous score, new score is overwritten on leader board | Pass      |
-| 5.9  | Logic    | If a user attempts the game again with the same username on a different difficulty, and beats their previous score, this is overwritten on the leader board | User enters previously used username, selects hard mode and beats previous score, new score is overwritten on leader board | Pass      |
 
+
+-5.1 
+![](assets/documentation/images/5.1.png)
+
+-5.2 
+![](assets/documentation/images/5.2b.png)
+
+-5.3
+![](assets/documentation/images/5.3.png)
+
+-5.4
+![](assets/documentation/images/5.4.png)
+
+-5.5
+![](assets/documentation/images/5.5.png)
+
+-5.6
+![](assets/documentation/images/5.6.png)
+
+-5.7
+![](assets/documentation/images/5.7.png)
+
+-5.8
+![](assets/documentation/images/5.8.png)
+
+#### Leaderboard
 ### Responsiveness
 
 ### User Stories Testing

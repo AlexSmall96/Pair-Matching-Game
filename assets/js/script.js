@@ -217,6 +217,7 @@ document.addEventListener("DOMContentLoaded", function() {
         promptArea.innerHTML=`<p>Pick a Card!</p>`;
         username=document.getElementById('username').value;
         //Add event listeners to cards//
+        
     for (let card of cards){
         card.addEventListener('click', function(){
             //Only let the user click if attempts are left
