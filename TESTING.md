@@ -77,11 +77,12 @@
 | 3.16 | User Input | Difficulty switch can be toggled on settings only version of home page      | Switch can be toggled between easy and hard as expected                                           | Pass      |
 | 3.17 | User Input | Start Game button can be clicked on settings only version of home page      | Button can be clicked and loads game page as expected                                             | Pass      |
 | 3.18 | Logic      | Difficulty switch on settings only version of home page changes card layout | When game page is loaded, difficulty settings act in the same way as starting from full home page |     Pass      |
-| 3.19 | Logic      | Once all items are found, a well done message appears and user cannot change any further cards | When game is won, message appears as expected, cards cannot be changed and exit game button can be clicked|     Pass      |
+| 3.19 | Logic      | Once all items are found, a well done message appears and user cannot change any further cards. A play again button appears.| When game is won, message appears as expected, cards cannot be changed and button appears as expected|     Pass      |
 | 3.20 | Logic      | Exit game button takes the user back to the home screen and all settings can be changed |Home screen loads as expected and username and difficulty can be selected|     Pass      |
 | 3.21 | Logic      | If try again button was clicked during game, exit game button takes the user back to full home screen |Home screen loads in full after game with try again button clicked|     Pass      |
 | 3.22 | Logic      | Username and difficulty can be changed for a new game |If difficulty is changed, card layout, items found box and attempts left value all change accordingly|     Pass      |
 | 3.23 | Logic      | User can click exit game button at any point and return to home screen |Exit game button returns user to home screen at any point as expected|     Pass      |
+| 3.24 | Logic      | Play again button takes user to same settings only home screen as try again button |Button behaves as expected and new game can be loaded with correct functionality|     Pass      |
 
 #### Screenshots where applicable for Card Area tests with corresponding test Numbers.
 
@@ -194,6 +195,27 @@ Game Page - Hard mode viewed on a Laptop (1440px)|
 ![](assets/documentation/images/laptop-game-hard.png) |
 
 ### User Stories Testing
+The site has been tested according to the user stories and fulfills all user needs:
+
+As a user, I would like to :
+
+- See clearly what the purpose of the game is
+   - The home page is very clear and has a snappy about section at the top. The title of the game is also simple and well known as it is a classic game.
+- Recieve clear and concise instructions as to how to navigate the site and play the game
+   - The instructions feature direclty below the about section on the home page, and are clear and concise, explaining in enough detail the rules and nagiation of the game
+- Easily navigate the site through eye catching buttons
+   -Throughout the site, buttons are eye catching and easy to locate. They appear or dissapear at the right times to allow the user to have the smoothest experience possible while playing the game.
+- Be able to view my progress as I am playing the game
+   - The items found icons update when cards are matched, and the numer of items to left is stated to the user, along with the attempts left.
+- Recieve prompts during the game to know what to do next
+   - At the end of each turn the user is told wether to keep guessing if correct or to press a button to turn the cards over if incorrect. 
+- Record my result and compare to other players
+   - If a username enters their username and makes it to the top 3, their result is saved on the leaderboard along with other users who have played the game on that browser.
+- Be able to exit the game or play again at the end of each game
+   - At the end of the game the user has the option to start a new game, by taking them to the settings menu regardless of if they win or lose. At any point in the game the user can exit to the home screen.
+
+
+
 
 ## Validation Testing
 

@@ -26,9 +26,22 @@ Alex Small
 ## User Stories
 ### Site User
 
+As a user, I would like to :
+
+- See clearly what the purpose of the game is
+- Recieve clear and concise instructions as to how to navigate the site and play the game
+- Easily navigate the site through eye catching buttons
+- Be able to view my progress as I am playing the game
+- Recieve prompts during the game to know what to do next
+- Record my result and compare to other players
+- Be able to exit the game or play again at the end of each game
 
 ### Website Owner
 
+As a site owner, I would like to :
+
+- Attract users to play the game through eye catching imagery, font and buttons
+- Express ideas freely and creatively
 
 ## Design Choices
 
