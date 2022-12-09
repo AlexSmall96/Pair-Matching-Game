@@ -1,9 +1,13 @@
 document.addEventListener("DOMContentLoaded", function() {
+    //Declare Variables//
+    //
+    //Declare variables required for loading game
     let difficulty='easy';
     let inputId=[];
     let inputName=[];
     let itemsFound=0;
     let scores={};
+    //Declare const variables
     const homePage=document.getElementById('home-page');
     const gamePage=document.getElementById('game-page');
     const leaderboardRows=document.getElementById('leaderboard').getElementsByTagName('tr');
@@ -14,18 +18,21 @@ document.addEventListener("DOMContentLoaded", function() {
     const exitButton = document.getElementById("exit-game");
     const instructions = document.getElementById('instructions');
     const about = document.getElementById('about');
-    //Define variables that change with difficulty
+    //Declare variables that change with difficulty
     let items;
     let keys;
     let noAttempts;
     let attemptsLeft;
     let username;
+
+    //Add event listeners where necessary
+    //
     //Add event listener to difficulty switch
     const diffSwitch=document.getElementById('switch');
     diffSwitch.addEventListener('change', function(){
         if (this.checked){
                 difficulty='hard';
-                //If hard mode is chosen change card layout
+                //Set layout of cards to hard mode
                 let gameTable=document.getElementById('game-table');
                 gameTable.innerHTML=
                 `
@@ -58,6 +65,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 <td id="burger-0" class="card"><i class="fa-2xl fa-solid fa-question"></i></td>
             </tr>
                 `;
+            //Set layout of found items to hard mode
             let foundTable=document.getElementById('found-table');
             foundTable.innerHTML=
             `
@@ -79,6 +87,7 @@ document.addEventListener("DOMContentLoaded", function() {
             
 
         } else {difficulty='easy';
+          //Set layout of cards to easy mode
           let gameTable=document.getElementById('game-table');
           gameTable.innerHTML=
           `
@@ -101,6 +110,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 <td id="pizza-slice-0" class="card"><i class="fa-2xl fa-solid fa-question"></i></td>
             </tr>
           `;
+        //Set layout of found items to easy mode
         let foundTable=document.getElementById('found-table');
         foundTable.innerHTML=
         `
@@ -115,11 +125,10 @@ document.addEventListener("DOMContentLoaded", function() {
         <td id="found-cake-candles"><i class="fa-2xl fa-solid fa-question"></i></td>
         </tr>
         `;
-        
-        
     }
     });
     
+    //Add event listener to exit game button
     exitButton.addEventListener("click", function(){
         gamePage.style.display='none';
         homePage.style.display='block';
@@ -129,9 +138,10 @@ document.addEventListener("DOMContentLoaded", function() {
 
     
 
-     
+     //Add event listener to play button
     playButton.addEventListener("click", function(){
     if (difficulty==='easy'){
+        //Define variables dependent on difficulty
         items={
             1:"pizza-slice-0",
             2:"pizza-slice-1",
@@ -176,6 +186,7 @@ document.addEventListener("DOMContentLoaded", function() {
         
     }
     document.getElementById('attempts-left').innerHTML = noAttempts;
+    //Show game page and hide home page
     gamePage.style.display='block';
     homePage.style.display='none';
     //Shuffle keys into new array//
@@ -216,8 +227,7 @@ document.addEventListener("DOMContentLoaded", function() {
         itemsFound=0;
         promptArea.innerHTML=`<p>Pick a Card!</p>`;
         username=document.getElementById('username').value;
-        //Add event listeners to cards//
-        
+     //Add event listeners to cards//    
     for (let card of cards){
         card.addEventListener('click', function(){
             //Only let the user click if attempts are left
@@ -245,7 +255,7 @@ document.addEventListener("DOMContentLoaded", function() {
                   foundItem.innerHTML=`<i class="fa-2xl fa-solid fa-${itemName}"></i>`;
                   //Increase score
                   itemsFound++;
-                  //Show well done message//
+                  //Show well done message and make new game button appear//
                   if (noItems-itemsFound>1){
                     promptArea.innerHTML=`<p>Well done! ${noItems-itemsFound} items left to find.</p>`;
                   } else if (noItems-itemsFound==1){
@@ -273,7 +283,10 @@ document.addEventListener("DOMContentLoaded", function() {
                         }
                     }
                     //Add new top 3 scores to leaderboard
+                    //(The code used to sort the names based on score value was taken from the below linked resource
+                    //https://medium.com/@gmcharmy/sort-objects-in-javascript-e-c-how-to-get-sorted-values-from-an-object-142a9ae7157c)
                     let sortedNames= Object.entries(scores).sort((a,b)=>b[1]-a[1]).map(el=>el[0]);
+                    //Add name and score to leaderboard
                     for (let i=0;i<3;i++){
                         if (sortedNames[i]){
                             leaderboardRows[i+1].innerHTML=`
@@ -285,9 +298,10 @@ document.addEventListener("DOMContentLoaded", function() {
                        
                     }
                 }
-                  
+                  //Reset input variables
                   inputId=[];
                   inputName=[];
+                    //If the user runs out of guesses let message and try again button appear
                   } else if (attemptsLeft<noItems-itemsFound){
                     promptArea.innerHTML=
                     `Sorry, not enough guesses remaining.
@@ -317,26 +331,19 @@ document.addEventListener("DOMContentLoaded", function() {
                                 `<i class="fa-2xl fa-solid fa-question"></i>`;
                             }
                         } 
-                        
+                        //Reset input variables
                         inputId=[];
                         inputName=[];
                         //Make button dissapear after it is clicked//
                         promptArea.innerHTML='<p></p>';
-                       
                     });
                   }
                 }
             }
         }
         }
-        
         });
     }
     });
-
-   
-
-   
-    
 });
 
