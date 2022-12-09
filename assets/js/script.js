@@ -251,8 +251,17 @@ document.addEventListener("DOMContentLoaded", function() {
                   } else if (noItems-itemsFound==1){
                     promptArea.innerHTML=`<p>Well done! 1 item left to find.</p>`;
                   } else {
-                    promptArea.innerHTML=`<p>Well done! All items found.</p>`;
-                    
+                    promptArea.innerHTML=`Well done! All items found.
+                    <br>
+                    <button class='vertical-margin' id="try-again">Play Again?</button></p>
+                    <br>`;
+                    let tryAgainButton = document.getElementById('try-again');
+                    tryAgainButton.addEventListener("click", function(){
+                        gamePage.style.display='none';
+                        homePage.style.display='block';
+                        about.style.display='none';
+                        instructions.style.display='none'
+                        });
                     //Update users score if new high score is achieved and username was entered
                     if (username){
                         if (scores[username]){
@@ -281,7 +290,7 @@ document.addEventListener("DOMContentLoaded", function() {
                   inputName=[];
                   } else if (attemptsLeft<noItems-itemsFound){
                     promptArea.innerHTML=
-                    `<p>Sorry, not enough guesses remaining.
+                    `Sorry, not enough guesses remaining.
                     <br>
                     <button class='vertical-margin' id="try-again">Try Again</button></p>
                     <br>`;
@@ -315,19 +324,7 @@ document.addEventListener("DOMContentLoaded", function() {
                         promptArea.innerHTML='<p></p>';
                        
                     });
-                  } else {promptArea.innerHTML=
-                          `<p>Sorry, you ran out of guesses.</p>
-                             <br>
-                            <button class='vertical-margin' id="try-again">Try Again</button></p>
-                           <br>`;
-                    let tryAgainButton = document.getElementById('try-again');
-                    tryAgainButton.addEventListener("click", function(){
-                        gamePage.style.display='none';
-                        homePage.style.display='block';
-                        about.style.display='none';
-                        instructions.style.display='none'
-                        });
-                }
+                  }
                 }
             }
         }

@@ -1,6 +1,5 @@
 ## Testing
 ### Manual Testing
-
 #### Home Page 
 
 | Test | Category         | Expected Result                     | Actual Result                                              | Pass/Fail |
