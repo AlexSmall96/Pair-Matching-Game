@@ -12,6 +12,8 @@ document.addEventListener("DOMContentLoaded", function() {
     const promptArea=document.getElementById('prompt-area');
     const playButton = document.getElementById("new-game");
     const exitButton = document.getElementById("exit-game");
+    const instructions = document.getElementById('instructions');
+    const about = document.getElementById('about');
     //Define variables that change with difficulty
     let items;
     let keys;
@@ -118,12 +120,16 @@ document.addEventListener("DOMContentLoaded", function() {
     }
     });
     
-   
+    exitButton.addEventListener("click", function(){
+        gamePage.style.display='none';
+        homePage.style.display='block';
+        about.style.display='block';
+        instructions.style.display='block';
+        });
 
+    
 
-   
-
-   
+     
     playButton.addEventListener("click", function(){
     if (difficulty==='easy'){
         items={
@@ -141,7 +147,7 @@ document.addEventListener("DOMContentLoaded", function() {
             12:"cake-candles-1"
             };
         keys=[1,2,3,4,5,6,7,8,9,10,11,12];
-        noAttempts=25;
+        noAttempts=10;
     } else {
         items={
             1:"pizza-slice-0",
@@ -273,7 +279,18 @@ document.addEventListener("DOMContentLoaded", function() {
                   inputId=[];
                   inputName=[];
                   } else if (attemptsLeft<noItems-itemsFound){
-                    promptArea.innerHTML='<p>Sorry, not enough guesses remaining.</p>';
+                    promptArea.innerHTML=
+                    `<p>Sorry, not enough guesses remaining.
+                    <br>
+                    <button class='vertical-margin' id="try-again">Try Again</button></p>
+                    <br>`;
+                    let tryAgainButton = document.getElementById('try-again');
+                    tryAgainButton.addEventListener("click", function(){
+                        gamePage.style.display='none';
+                        homePage.style.display='block';
+                        about.style.display='none';
+                        instructions.style.display='none'
+                        });
                   } else if (attemptsLeft>0){
                     //Let button appear to guess again//
                     promptArea.innerHTML='<button id="guess-again">Guess Again</button>';
@@ -297,7 +314,18 @@ document.addEventListener("DOMContentLoaded", function() {
                         promptArea.innerHTML='<p></p>';
                        
                     });
-                  } else {promptArea.innerHTML='<p>Sorry, you ran out of guesses.</p>';
+                  } else {promptArea.innerHTML=
+                          `<p>Sorry, you ran out of guesses.</p>
+                             <br>
+                            <button class='vertical-margin' id="try-again">Try Again</button></p>
+                           <br>`;
+                    let tryAgainButton = document.getElementById('try-again');
+                    tryAgainButton.addEventListener("click", function(){
+                        gamePage.style.display='none';
+                        homePage.style.display='block';
+                        about.style.display='none';
+                        instructions.style.display='none'
+                        });
                 }
                 }
             }
@@ -308,10 +336,7 @@ document.addEventListener("DOMContentLoaded", function() {
     }
     });
 
-    exitButton.addEventListener("click", function(){
-    gamePage.style.display='none';
-    homePage.style.display='block';
-    });
+   
 
    
     
