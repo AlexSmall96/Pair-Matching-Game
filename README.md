@@ -98,11 +98,13 @@ The content of the site is all original thought, however the game itself is base
 ## Code
 The resources used for this project were the Javascript Essentials module, HTML & CSS Essentials module, the Love Running and Love Maths walkthrough projects, along with some external resources:
 
-- The code which sorts the leaderboard based on users scores (Line 288 of script.js) is taken from an article from [medium.com](https://medium.com/@gmcharmy/sort-objects-in-javascript-e-c-how-to-get-sorted-values-from-an-object-142a9ae7157c).
+- The code which sorts the leaderboard based on users scores is taken from an article from [medium.com](https://medium.com/@gmcharmy/sort-objects-in-javascript-e-c-how-to-get-sorted-values-from-an-object-142a9ae7157c).
 
 - The difficulty switch on the home page is styled with inspiration from a guide found at [geeksforgeeks](https://www.geeksforgeeks.org/how-to-create-toggle-switch-by-using-html-and-css/).
 
-- The CSS background effects were taken from a thread on [Stack Overflow](https://stackoverflow.com/questions/2869212/css3-gradient-background-set-on-body-doesnt-stretch-but-instead-repeats/),[](https://www.w3schools.com/css/css3_gradients.asp).  
+- The CSS background effects were taken from a section on [W3schools](https://www.w3schools.com/css/css3_gradients.asp) and a thread on [Stack Overflow](https://stackoverflow.com/questions/2869212/css3-gradient-background-set-on-body-doesnt-stretch-but-instead-repeats/) 
+
+- All external resources are commented in the code at the relevant places.
 
 ## Acknowledgements 
 I would like to thank my mentor Harry Dhillon for his encouraging support and detailed feedback throughout this project.

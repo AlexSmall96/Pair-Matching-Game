@@ -2,6 +2,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Electrolize&display=swap');
 
 /*Whole Page*/
+/*The code used to style the background of the body was taken from the following resources:
+https://www.w3schools.com/css/css3_gradients.asp
+https://stackoverflow.com/questions/2869212/css3-gradient-background-set-on-body-doesnt-stretch-but-instead-repeats/ */
 body{
     text-align: center;
     font-family: 'Electrolize', sans-serif;
@@ -24,6 +27,8 @@ h1{
 }
 
 /*Home page*/
+/*The code used to style the background of the home page was taken from the following resources:
+https://www.w3schools.com/css/css3_gradients.asp */
 #home-page{
     width:60%;
     border-style: solid;
@@ -48,7 +53,7 @@ h1{
     padding:10px;
 }
 /*The below code used to style the difficult switch was taken from the 
-/* following resource 
+/* following resource from geekgsforgeeks
 /* https://www.geeksforgeeks.org/how-to-create-toggle-switch-by-using-html-and-css/ */
 
  .toggle {
@@ -87,6 +92,8 @@ h1{
 }
 
 /*Game Page*/
+/*The code used to style the background of the home page was taken from the following resources:
+https://www.w3schools.com/css/css3_gradients.asp */
 #game-page{
     display:none;
     width:50%;
