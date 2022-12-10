@@ -60,12 +60,13 @@ Feature| Image | Value to User
 |Username Input|![](assets/documentation/images/username.png) |An input allowing the user to enter their chosen username, which allows them to compare their score to others on the leaderboard.
 |Difficulty Switch|![](assets/documentation/images/difficulty.png) |Allows the user to set the difficulty to a level that is appropriate for them.
 |Start Button|![](assets/documentation/images/start.png) |Allows the user to easily navigate to the game page.
-|Cards Area|![](assets/documentation/images/start.png) |Allows the user to easily navigate to the game page.
-|Score Tracking|![](assets/documentation/images/start.png) |Allows the user to easily navigate to the game page.
-|Exit Game Button|![](assets/documentation/images/start.png) |Allows the user to easily navigate to the game page.
-|Leaderboard|![](assets/documentation/images/start.png) |Allows the user to easily navigate to the game page.
-|New Game Button|![](assets/documentation/images/start.png) |Allows the user to easily navigate to the game page.
-|Try Again Button|![](assets/documentation/images/start.png) |Allows the user to easily navigate to the game page.
+|Cards Area|![](assets/documentation/images/cards-easy.png)![](assets/documentation/images/cards-hard.png) |Allows the user to easily navigate to the game page.
+|Score Tracking|![](assets/documentation/images/score-easy.png)![](assets/documentation/images/score-hard.png) |Allows the user to easily navigate to the game page.
+|Exit Game Button|![](assets/documentation/images/Exit.png) |Allows the user to easily navigate to the game page.
+|Leaderboard|![](assets/documentation/images/leaderboard.png) |Allows the user to easily navigate to the game page.
+|New Game Button|![](assets/documentation/images/new-game.png) |Allows the user to easily navigate to the game page.
+|Try Again Button|![](assets/documentation/images/try-again.png) |Allows the user to easily navigate to the game page.
+|Settings Only Home Screen|![](assets/documentation/images/settings-only.png) |Allows the user to easily navigate to the game page.
 ### Media Queries ###
 
 ## Future Features
