@@ -50,8 +50,7 @@ As a site owner, I would like to :
 
 ## Site Structure and Features
 
-
-- Site structure here
+The site is structured into two main areas, the home page and the game page. The home page is where the user is brought to initially, and contains the header, an about section, intstructions to play the game, and a settings section, with username input and difficulty switch. The game is played on the game page, which can be accessed via the start game button. This contains the cards area, where the game is played, a score tracking area and a leaderboard.
 
 Feature| Image | Value to User
 :-------------------------:|:-------------------------: | :-------------------------: 
@@ -68,9 +67,19 @@ Feature| Image | Value to User
 |Try Again Button|![](assets/documentation/images/try-again.png) |If the user loses the game, a button with 'Try Again' appears, taking the user back to a reduced version of the home page (see below). Allows the user to smoothly navigate the site.
 |Settings Only Home Screen|![](assets/documentation/images/settings-only.png) |A reduced version of the home screen, showing only the username input, difficulty switch and start game button. This is more convenient to the user to reload a new game rather than returning to the full home screen and navigating to the bottom.
 ### Media Queries ###
+The Site uses media queries on both pages to achieve full responsiveness and maintain its structural integrity across all browser sizes.
 
+- On the home page, the font size, buttons, page width % and difficulty switch size all change with different browser sizes.
+
+- On the game page, the font-size, card padding, score area padding, page width % and leaderboard width % all change with different browser sizes. 
+
+- See lines 159 onwards of style.css file for full details of media queries.
+
+The media queries allow the site to be easily navigated and played by the user at all browser sizes, keeping the basic structure and maintaining the paes aesthetics so it is visaully appealing for the user. See Responsiveness of [TESTING.MD](https://github.com/AlexSmall96/Pair-Matching-Game/blob/main/TESTING.md) for images of the site at different browser sizes.
 ## Future Features
+- A feature that could be explored in the future is the option to add a timer so that there is a time limit to complete the game, rather than a maximum number of attempts allowed.
 
+- Further developments might also include a database to save users names across different devices, allowing the user to compare their score to others on a more global scale.
 ## Testing
 Testing is detailed fully in [TESTING.MD](https://github.com/AlexSmall96/Pair-Matching-Game/blob/main/TESTING.md)
 
@@ -82,6 +91,7 @@ Testing is detailed fully in [TESTING.MD](https://github.com/AlexSmall96/Pair-Ma
 - google fonts
 - Coolors.co
 - amiresponsive
+- Javascript Math
 
 # Deployment
 
