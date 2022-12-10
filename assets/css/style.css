@@ -12,6 +12,7 @@ body{
     background-repeat: no-repeat;
     background-attachment: fixed;
 }
+
 .vertical-margin{
     margin-top:20px;
     margin-bottom:20px;
@@ -52,10 +53,10 @@ https://www.w3schools.com/css/css3_gradients.asp */
     box-shadow: 5px 5px green;
     padding:10px;
 }
+
 /*The below code used to style the difficult switch was taken from the 
 /* following resource from geekgsforgeeks
 /* https://www.geeksforgeeks.org/how-to-create-toggle-switch-by-using-html-and-css/ */
-
  .toggle {
     position : relative ;
     display : inline-block;
@@ -66,7 +67,6 @@ https://www.w3schools.com/css/css3_gradients.asp */
     border: 2px solid gray;
 }
        
-
 .toggle:after {
     content: '';
     position: absolute;
