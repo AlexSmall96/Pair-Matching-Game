@@ -2,11 +2,11 @@
 introduction
 
 ## Live Site 
+[https://alexsmall96.github.io/Pairs/](https://alexsmall96.github.io/Pairs/)
 
-
-
+![](assets/documentation/images/am-i-responsive.png)
 ## Repository 
-[](https://github.com/AlexSmall96/Pairs)
+[https://alexsmall96.github.io/Pairs/](https://github.com/AlexSmall96/Pairs)
 
 ## Author 
 Alex Small
@@ -42,11 +42,14 @@ As a site owner, I would like to :
 
 ## Design Choices
 ### Colors
+I wanted to site to have a playful and fun feel to it. I chose bright, bold to give the user the impression of a fun website. The home page and game pages stand out well from the background with a bold green vs a faded blue, while the cards are more of a stronger blue to make them the fore front of the site. I chose gold, silver and bronze for the leaderboard to create a more visullay appealing method of ranking players.
+![](assets/documentation/images/colours1.png)
+![](assets/documentation/images/colours2.png)
 
 ### Typography
-
+The font used on this site is [Electrolize](https://fonts.googleapis.com/css2?family=Electrolize&display=swap) from Google Fonts. I thought this was an appropriate choice for this site as it has a playful and informal feel to it, appropriate for a game.
 ### Imagery
-
+The images used in this site are the icons that appear on the cards, taken from [Font Awesome](https://fontawesome.com/). The Icons were chosen to be random items that give a playful impression, while being visually appealing.
 
 ## Site Structure and Features
 
@@ -94,12 +97,26 @@ Testing is detailed fully in [TESTING.MD](https://github.com/AlexSmall96/Pair-Ma
 - Javascript Math
 
 # Deployment
-
-The site was deployed to GitHub pages. The steps to deploy are as follows:
-- In the GitHub repository, navigate to the Settings tab.
+### Deploying the Site to GitHub
+- On GitHub.com, navigate to the main page of the [Pairs](https://github.com/AlexSmall96/Pairs) repository.
 - From the source section drop-down menu, select the Master Branch.
 - Once the master branch has been selected, the page will be automatically refreshed with a detailed ribbon display to indicate the successful deployment.
--Add info about forking
+### Forking the Repository on GitHub
+- On GitHub.com, navigate to the main page of the [Pairs](https://github.com/AlexSmall96/Pairs) repository.
+- In the top-right corner of the page, click Fork.
+- Select an owner for the forked repository.
+- By default, forks are named the same as their upstream repositories. You can change the name of the fork to distinguish it further.
+- Optionally, add a description of your fork.
+- Choose whether to copy only the default branch or all branches to the new fork. For many forking scenarios, such as contributing to open-source projects, you only need to copy the default branch. By default, only the default branch is copied.
+- Click Create fork.
+### Cloning the Repository on GitHub
+- On GitHub.com, navigate to the main page of the [Pairs](https://github.com/AlexSmall96/Pairs) repository.
+- Above the list of files, click Code.
+- Copy the URL for the repository.
+- Open Terminal.
+- Change the current working directory to the location where you want the cloned directory.
+- Type git clone, and then paste the URL you copied earlier.
+- Press Enter to create your local clone.
 
 # Credits
 ## Content
