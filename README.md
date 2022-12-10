@@ -5,6 +5,7 @@ introduction
 [https://alexsmall96.github.io/Pairs/](https://alexsmall96.github.io/Pairs/)
 
 ![](assets/documentation/images/am-i-responsive.png)
+![](assets/documentation/images/responsive2.png)
 ## Repository 
 [https://alexsmall96.github.io/Pairs/](https://github.com/AlexSmall96/Pairs)
 
@@ -43,6 +44,7 @@ As a site owner, I would like to :
 ## Design Choices
 ### Colors
 I wanted to site to have a playful and fun feel to it. I chose bright, bold to give the user the impression of a fun website. The home page and game pages stand out well from the background with a bold green vs a faded blue, while the cards are more of a stronger blue to make them the fore front of the site. I chose gold, silver and bronze for the leaderboard to create a more visullay appealing method of ranking players.
+
 ![](assets/documentation/images/colours1.png)
 ![](assets/documentation/images/colours2.png)
 
@@ -54,6 +56,8 @@ The images used in this site are the icons that appear on the cards, taken from 
 ## Site Structure and Features
 
 The site is structured into two main areas, the home page and the game page. The home page is where the user is brought to initially, and contains the header, an about section, intstructions to play the game, and a settings section, with username input and difficulty switch. The game is played on the game page, which can be accessed via the start game button. This contains the cards area, where the game is played, a score tracking area and a leaderboard.
+
+The features of the site are given below, along with an image and its value to the user.
 
 Feature| Image | Value to User
 :-------------------------:|:-------------------------: | :-------------------------: 
@@ -84,7 +88,7 @@ The media queries allow the site to be easily navigated and played by the user a
 
 - Further developments might also include a database to save users names across different devices, allowing the user to compare their score to others on a more global scale.
 ## Testing
-Testing is detailed fully in [TESTING.MD](https://github.com/AlexSmall96/Pair-Matching-Game/blob/main/TESTING.md)
+Testing is detailed fully in [TESTING.MD](https://github.com/AlexSmall96/Pair-Matching-Game/blob/main/TESTING.md).
 
 ## Frameworks, Libraries & Programs Used
 
@@ -120,17 +124,17 @@ Testing is detailed fully in [TESTING.MD](https://github.com/AlexSmall96/Pair-Ma
 
 # Credits
 ## Content
-The content of the site is all original thought, however the game itself is based on the classic card game [Concentration](https://en.wikipedia.org/wiki/Concentration_(card_game)) (also known as Pairs or Pelmanism)
+The content of the site is all original thought, however the game itself is based on the classic card game [Concentration](https://en.wikipedia.org/wiki/Concentration_(card_game)) (also known as Pairs or Pelmanism).
 ## Media
 
 ## Code
-The resources used for this project were the Javascript Essentials module, HTML & CSS Essentials module, the Love Running and Love Maths walkthrough projects, along with some external resources:
+The resources used for this project were the CI Javascript Essentials module, HTML & CSS Essentials module, the Love Running and Love Maths walkthrough projects, along with some external resources:
 
 - The code which sorts the leaderboard based on users scores is taken from an article from [medium.com](https://medium.com/@gmcharmy/sort-objects-in-javascript-e-c-how-to-get-sorted-values-from-an-object-142a9ae7157c).
 
 - The difficulty switch on the home page is styled with inspiration from a guide found at [geeksforgeeks](https://www.geeksforgeeks.org/how-to-create-toggle-switch-by-using-html-and-css/).
 
-- The CSS background effects were taken from a section on [W3schools](https://www.w3schools.com/css/css3_gradients.asp) and a thread on [Stack Overflow](https://stackoverflow.com/questions/2869212/css3-gradient-background-set-on-body-doesnt-stretch-but-instead-repeats/) 
+- The CSS background effects were taken from a section on [W3schools](https://www.w3schools.com/css/css3_gradients.asp) and a thread on [Stack Overflow](https://stackoverflow.com/questions/2869212/css3-gradient-background-set-on-body-doesnt-stretch-but-instead-repeats/). 
 
 - All external resources are commented in the code at the relevant places.
 
