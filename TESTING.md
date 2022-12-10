@@ -1,5 +1,7 @@
 # Testing
+## Table of Contents
 - [Testing](#testing)
+  * [Table of Contents](#table-of-contents)
   * [Manual Testing](#manual-testing)
     + [Home Page](#home-page)
       - [Screenshots where applicable for Home Page tests with corresponding test Numbers.](#screenshots-where-applicable-for-home-page-tests-with-corresponding-test-numbers)
@@ -20,7 +22,7 @@
     + [HTML Validation](#html-validation)
     + [JS Validation](#js-validation)
 ## Manual Testing
-Throughout this section, tests have been divided into site areas, and marked as a certain category. The expected and actual results are given, along with a pass/fail indicator. Each test has a unqiue reference number and, where applicable, these numbers are matched to screenshots of the test results below each table.
+Throughout this section, tests have been divided into site areas, and marked as a certain category. The expected and actual results are given, along with a pass/fail indicator. Each test has a unique reference number and, where applicable, these numbers are matched to screenshots of the test results below each table.
 ### Home Page 
 | Test | Category         | Expected Result                     | Actual Result                                              | Pass/Fail |
 |------|------------------|-------------------------------------|------------------------------------------------------------|-----------|
@@ -49,8 +51,8 @@ Throughout this section, tests have been divided into site areas, and marked as 
 | 2.2    | Screen Loading  | Header remains above game play area when game page is loaded                                                 | Header remains as expected                                                                                | Pass      |
 | 2.3    | Images and font | Chosen font appears correctly                                                        | All text is in Google font 'Electrolyse' as expected                                                       | Pass      |
 | 2.4    | Images and font | Font Awesome icons load correctly                                                    | Question mark icons in 'Items Found' box appear as expected                                                | Pass      |
-| 2.5    | Logic           | Switching to easy mode changes card layout, Items Found box and Attempts Left value. | 12 cards appear, Attempts Left value is 25, and 6 question marks appear in 'Items Found' box as expected.  | Pass      |
-| 2.6    | Logic           | Switching to hard mode changes card layout, Items Found box and Attempts Left value. | 20 cards appear, Attempts Left value is 50, and 10 question marks appear in 'Items Found' box as expected. | Pass      |
+| 2.5    | Logic           | Switching to easy mode changes card layout, Items Found box and Attempts Left value. | 12 cards appear, Attempts Left value is 25, and 6 question marks appear in 'Items Found' box as expected | Pass      |
+| 2.6    | Logic           | Switching to hard mode changes card layout, Items Found box and Attempts Left value. | 20 cards appear, Attempts Left value is 35, and 10 question marks appear in 'Items Found' box as expected. | Pass      |
 | 2.7    | Logic           | Game page loads with cards face down (showing question mark)                         | In both difficulty modes, all cards appear with question mark when game page is loaded                     | Pass      |
 | 2.8    | Logic           | 'Found Items' resets to none                                                         | In both difficulty modes, all icons in box load as question marks                                          | Pass      |
 | 2.9    | Logic           | Prompt under cards loads loads as 'Pick a Card!'                                     | Text appears as expected                                                                                   | Pass      |
@@ -70,13 +72,13 @@ Throughout this section, tests have been divided into site areas, and marked as 
 | 3.3  | Logic          | If cards match, user can continue to click on another pair                                                                                                     | When cards match and prompt message appears, user can click on any two cards other than a pair that has already been matched.                            | Pass      |
 | 3.4  | Logic          | Cards that are turned over and match remain turned over                                                                                                        | If matching pair is found, they stay turned over until exit game button is clicked and new game is run. See test (2.6, 3.19)                                                         | Pass      |
 | 3.5  | Logic          | Matched pairs can't be turned back over                                                                                                                        | If user clicks on a card that has been matched, nothing happens                                                                                          | Pass      |
-| 3.6  | Logic          | If an attempt is incorrect, a guess again button appears                                                                                                       | If user selects two cards that don't match, prompt message dissapear and guess again button appears                                                      | Pass      |
-| 3.7  | Logic          | When guess again button appears, user cannot click on any other cards untill button is clicked.                                                                | If user selects any cards before clicking guess again button, nothing happens.                                                                           |  Pass         |
+| 3.6  | Logic          | If an attempt is incorrect, a guess again button appears                                                                                                       | If user selects two cards that don't match, prompt message disapear and guess again button appears                                                      | Pass      |
+| 3.7  | Logic          | When guess again button appears, user cannot click on any other cards until button is clicked.                                                                | If user selects any cards before clicking guess again button, nothing happens.                                                                           |  Pass         |
 | 3.8  | Logic          | Clicking guess again button turns the unmatched pair back over                                                                                                 | The last two cards selected turn back over                                                                                                               | Pass          |
 | 3.9  | Logic          | Guess again button disappears when it is clicked                                                                                                               | When user clicks button, it disappears and there is no prompt message                                                                                    |  Pass         |Pass
 | 3.10 | Logic          | If attempts left becomes less than number of items left to find, a message appears stating 'Sorry not enough guesses remaining' and a Try Again button appears | Message and button appear as expected when case occurs                                                                                                   |Pass           |
 | 3.11 | Logic          | If attempts left becomes less than number of items left to find, user cannot turn over any more cards until a new game is started                              | When case occurs and message and button have appeared, clicking on any further cards does nothing                                                        |  Pass         |
-| 3.12 | Logic          | Clicking Try Again button takes the user back to the settings section of the home page                                                                         | On clicking the Try Again button, the game page dissapears and the settings section of the home page appears with instructions and about sections hidden |  Pass         |
+| 3.12 | Logic          | Clicking Try Again button takes the user back to the settings section of the home page                                                                         | On clicking the Try Again button, the game page disapears and the settings section of the home page appears with instructions and about sections hidden |  Pass         |
 | 3.13 | Screen Loading | Header remains above home page area when try again button is clicked                                                                                           | Header remains as expected                                                                                                                               |  Pass         |
 | 3.14 | Screen Loading | Username, difficulty switch and Start Game button all appear when try again button is clicked    |Features appear as expected|Pass|
 | 3.15 | User Input | Username can be inputted into box on settings only version of home page     | Input accepts any value                                                                           | Pass      |
@@ -160,7 +162,7 @@ Throughout this section, tests have been divided into site areas, and marked as 
 - The site uses media queries to change the width of the game page, font size, icon size and card padding depending on the browser size.
 
 ### Issues Found
-- At narrow browser sizes (<450px in width), the card area begins to look cluttered. This is due to the number of cards that are involved with hard mode. The easy mode layout has to accomdate this as the media queries apply to both easy and hard mode. The game also requries extra space in the margins of the card area, as the cards increase in width when turned over due to the question mark icon being narrower than the others.
+- At narrow browser sizes (<450px in width), the card area begins to look cluttered. This is due to the number of cards that are involved with hard mode. The easy mode layout has to accommodate this as the media queries apply to both easy and hard mode. The game also requires extra space in the margins of the card area, as the cards increase in width when turned over due to the question mark icon being narrower than the others.
 
 - As a fix for this issue, further developments of this project might involve using javascript to make the site responsive at these small browser sizes, allowing the details of the media queries to be dependent on the difficulty level chosen.
 
@@ -175,7 +177,7 @@ Home Page viewed on a Laptop (1440px)|
 ![](assets/documentation/images/laptop-home.png) |
 
 
-Game Page - Easy mode viewed on a Mobile (320px) | Game Page - Easy modeviewed on a Tablet (768px) 
+Game Page - Easy mode viewed on a Mobile (320px) | Game Page - Easy mode viewed on a Tablet (768px) 
 :-------------------------:|:-------------------------:
 ![](assets/documentation/images/mobile-game-easy.png) | ![](assets/documentation/images/tablet-game-easy.png))
 
@@ -192,20 +194,20 @@ Game Page - Hard mode viewed on a Laptop (1440px)|
 ![](assets/documentation/images/laptop-game-hard.png) |
 
 ## User Stories Testing
-The site has been tested according to the user stories and fulfills all user needs:
+The site has been tested according to the user stories and fulfils all user needs:
 
 As a user, I would like to :
 
 - See clearly what the purpose of the game is
    - The home page is very clear and has a snappy about section at the top. The title of the game is also simple and well known as it is a classic game.
-- Recieve clear and concise instructions as to how to navigate the site and play the game
-   - The instructions feature direclty below the about section on the home page, and are clear and concise, explaining in enough detail the rules and nagiation of the game
+- Receive clear and concise instructions as to how to navigate the site and play the game
+   - The instructions feature direclty  below the about section on the home page, and are clear and concise, explaining in enough detail the rules and navigation of the game
 - Easily navigate the site through eye catching buttons
-   -Throughout the site, buttons are eye catching and easy to locate. They appear or dissapear at the right times to allow the user to have the smoothest experience possible while playing the game.
+   -Throughout the site, buttons are eye catching and easy to locate. They appear or disappear at the right times to allow the user to have the smoothest experience possible while playing the game.
 - Be able to view my progress as I am playing the game
-   - The items found icons update when cards are matched, and the numer of items to left is stated to the user, along with the attempts left.
-- Recieve prompts during the game to know what to do next
-   - At the end of each turn the user is told wether to keep guessing if correct or to press a button to turn the cards over if incorrect. 
+   - The items found icons update when cards are matched, and the number of items to left is stated to the user, along with the attempts left.
+- Receive prompts during the game to know what to do next
+   - At the end of each turn the user is told whether to keep guessing if correct or to press a button to turn the cards over if incorrect. 
 - Record my result and compare to other players
    - If a username enters their username and makes it to the top 3, their result is saved on the leaderboard along with other users who have played the game on that browser.
 - Be able to exit the game or play again at the end of each game
@@ -213,13 +215,13 @@ As a user, I would like to :
 
 ## Validation Testing
 ### CSS Validation
-The style.css file passes through official [CSS validator](https://jigsaw.w3.org/css-validator/) without any errors.
+The style.css file passes through the official [CSS validator](https://jigsaw.w3.org/css-validator/) without any errors.
 ![](assets/documentation/images/css-pass.png)
 ### HTML Validation
 The index.html file passes through the official [HTML validator](https://validator.w3.org/) without any errors.
 ![](assets/documentation/images/html-pass.png)
 ### JS Validation 
-The script.js file passes through [JSHint](https://jshint.com/) without any errors. The validator proudces the following metrics: 
+The script.js file passes through [JSHint](https://jshint.com/) without any errors. The validator produces the following metrics: 
 
 - There are 10 functions in this file.
 
