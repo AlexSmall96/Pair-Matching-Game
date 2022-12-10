@@ -1,6 +1,27 @@
-## Testing
-### Manual Testing
-#### Home Page 
+# Testing
+- [Testing](#testing)
+  * [Manual Testing](#manual-testing)
+    + [Home Page](#home-page)
+      - [Screenshots where applicable for Home Page tests with corresponding test Numbers.](#screenshots-where-applicable-for-home-page-tests-with-corresponding-test-numbers)
+    + [Game Page](#game-page)
+      - [Screenshots where applicable for Game Page tests with corresponding test Numbers.](#screenshots-where-applicable-for-game-page-tests-with-corresponding-test-numbers)
+    + [Game Play](#game-play)
+    + [Card Area](#card-area)
+      - [Screenshots where applicable for Card Area tests with corresponding test Numbers.](#screenshots-where-applicable-for-card-area-tests-with-corresponding-test-numbers)
+    + [Found Items Area](#found-items-area)
+      - [Screenshots where applicable for Found Items area with corresponding test Numbers.](#screenshots-where-applicable-for-found-items-area-with-corresponding-test-numbers)
+    + [Leaderboard](#leaderboard)
+    + [Screenshots where applicable for Leaderboard area with corresponding test Numbers.](#screenshots-where-applicable-for-leaderboard-area-with-corresponding-test-numbers)
+  * [Responsiveness](#responsiveness)
+    + [Issues Found](#issues-found)
+  * [User Stories Testing](#user-stories-testing)
+  * [Validation Testing](#validation-testing)
+    + [CSS Validation](#css-validation)
+    + [HTML Validation](#html-validation)
+    + [JS Validation](#js-validation)
+## Manual Testing
+Throughout this section, tests have been divided into site areas, and marked as a certain category. The expected and actual results are given, along with a pass/fail indicator. Each test has a unqiue reference number and, where applicable, these numbers are matched to screenshots of the test results below each table.
+### Home Page 
 | Test | Category         | Expected Result                     | Actual Result                                              | Pass/Fail |
 |------|------------------|-------------------------------------|------------------------------------------------------------|-----------|
 | 1.1   | Deployed Website | Home Page loads without any issues  | Home Page loads as expected                                | Pass      |
@@ -21,7 +42,7 @@
 :-------------------------:|:-------------------------:
 ![](assets/documentation/images/1.4.png) | ![](assets/documentation/images/1.5a.png)![](assets/documentation/images/1.5b.png)
 
-#### Game Page
+### Game Page
 | Test | Category        | Expected Result                                                                      | Actual Result                                                                                              | Pass/Fail |
 |------|-----------------|--------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------|-----------|
 | 2.1    | Screen Loading  | Game page loads without any issues                                                   | Game page loads as expected                                                                                | Pass      |
@@ -41,7 +62,7 @@
 ![](assets/documentation/images/1.7.png) | ![](assets/documentation/images/2.6.png)
 
 ### Game Play
-#### Card Area
+### Card Area
 | Test | Category       | Expected Result                                                                                                                                                | Actual Result                                                                                                                                            | Pass/Fail |
 |------|----------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------|-----------|
 | 3.1  | Logic          | In each attempt, any two cards can be selected                                                                                                                 | User can click on any two cards, and question mark turns into specific icon.                                                                             | Pass      |
@@ -87,7 +108,7 @@
 :-------------------------:|
 ![](assets/documentation/images/3.19.png) |
 
-#### Found Items Area
+### Found Items Area
 | Test | Category | Expected Result                                                  | Actual Result                                                                                                                   | Pass/Fail |
 |------|----------|------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------|-----------|
 | 4.1  | Logic    | After an attempt has been made, the Attempts Left decreases by 1 | Once the user has selected two cards, the value drops by 1                                                                      | Pass      |
@@ -98,7 +119,7 @@
 :-------------------------:|
 ![](assets/documentation/images/4.1.png) | 
 
-#### Leaderboard
+### Leaderboard
 | Test | Category | Expected Result                                                                                                                                             | Actual Result                                                                                                              | Pass/Fail |
 |------|----------|-------------------------------------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------|-----------|
 | 5.1  | Logic    | The first user to enter a username and complete the game has their username and score saved to 1st place on the leaderboard.                                | Username and score appear in 1st place upon completing game                                                                | Pass      |
@@ -110,7 +131,7 @@
 | 5.7  | Logic    | If a user attempts the game again with the same username, and beats their previous score, this is overwritten in the leaderboard                            | User enters a previously used username, achieves a higher score and overwrites previous score on leader board              | Pass      |
 | 5.8  | Logic    | If a user attempts the game again with the same username on a different difficulty, and beats their previous score, this is overwritten on the leader board | User enters previously used username, selects hard mode and beats previous score, new score is overwritten on leader board | Pass      |
 
-#### Screenshots where applicable for Leaderboard area with corresponding test Numbers.
+### Screenshots where applicable for Leaderboard area with corresponding test Numbers.
 5.1|
 :-------------------------:|
 ![](assets/documentation/images/5.1.png) |
@@ -133,12 +154,12 @@
 
 
 
-### Responsiveness
+## Responsiveness
 - The site has been tested for responsiveness on a range of browser sizes. These range in width from 320px to 2560px. Both pages are fully responsive in both easy and hard mode, maintaining their structural integrity across all browser sizes. 
 
 - The site uses media queries to change the width of the game page, font size, icon size and card padding depending on the browser size.
 
-##### Issues Found
+### Issues Found
 - At narrow browser sizes (<450px in width), the card area begins to look cluttered. This is due to the number of cards that are involved with hard mode. The easy mode layout has to accomdate this as the media queries apply to both easy and hard mode. The game also requries extra space in the margins of the card area, as the cards increase in width when turned over due to the question mark icon being narrower than the others.
 
 - As a fix for this issue, further developments of this project might involve using javascript to make the site responsive at these small browser sizes, allowing the details of the media queries to be dependent on the difficulty level chosen.
@@ -170,7 +191,7 @@ Game Page - Hard mode viewed on a Laptop (1440px)|
 :-------------------------:|
 ![](assets/documentation/images/laptop-game-hard.png) |
 
-### User Stories Testing
+## User Stories Testing
 The site has been tested according to the user stories and fulfills all user needs:
 
 As a user, I would like to :

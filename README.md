@@ -1,5 +1,7 @@
 # Pairs
-introduction
+This site is a fun and playful remake of the classic card matching game Pairs. The game is played by clicking on cards to reveal an array of random items, ranging from pizza slices and burgers, to motorcycles and space shuttles. Players have to turn over two cards at a time, with the aim of finding a matching pair. Those that complete the game within the given number of attempts have a chance of being entered onto the leaderboard.
+
+This game is a great test of memory, concentraion and focus. Memory games such as Pairs have been shown to improve cognitive abilities over the long term. 
 
 ## Live Site 
 [https://alexsmall96.github.io/Pairs/](https://alexsmall96.github.io/Pairs/)
@@ -11,17 +13,40 @@ introduction
 
 ## Author 
 Alex Small
-
-
+- [Pairs](#pairs)
+  * [Live Site](#live-site)
+  * [Repository](#repository)
+  * [Author](#author)
+- [UX](#ux)
+  * [Target Audience](#target-audience)
+  * [Project Goals](#project-goals)
+  * [User Stories](#user-stories)
+    + [Site User](#site-user)
+    + [Website Owner](#website-owner)
+  * [Design Choices](#design-choices)
+    + [Colors](#colors)
+    + [Typography](#typography)
+    + [Imagery](#imagery)
+  * [Site Structure and Features](#site-structure-and-features)
+    + [Media Queries](#media-queries)
+  * [Future Features](#future-features)
+  * [Testing](#testing)
+  * [Frameworks, Libraries & Programs Used](#frameworks--libraries---programs-used)
+- [Deployment](#deployment)
+    + [Deploying the Site to GitHub](#deploying-the-site-to-github)
+    + [Forking the Repository on GitHub](#forking-the-repository-on-github)
+    + [Cloning the Repository on GitHub](#cloning-the-repository-on-github)
+- [Credits](#credits)
+  * [Content](#content)
+  * [Media](#media)
+  * [Code](#code)
+  * [Acknowledgements](#acknowledgements)
 # UX
 ## Target Audience
-
+Although the game is suitable to played by everyone, the colours, imagery and typography would lean more towards a younger audience. 
  
-
-
 ## Project Goals
-
-
+The goal of this project was to create a site that made effective use HTML, CSS and Javascript, creating a fully functional game that was intuitive to play and visually appealing.
 
 ## User Stories
 ### Site User
