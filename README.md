@@ -59,14 +59,14 @@ Feature| Image | Value to User
 |Instructions|![](assets/documentation/images/instructions.png) |Detailed instructions telling user the game rules as well as how to easily navigate through the site.
 |Username Input|![](assets/documentation/images/username.png) |An input allowing the user to enter their chosen username, which allows them to compare their score to others on the leaderboard.
 |Difficulty Switch|![](assets/documentation/images/difficulty.png) |Allows the user to set the difficulty to a level that is appropriate for them.
-|Start Button|![](assets/documentation/images/start.png) |Allows the user to easily navigate to the game page.
-|Cards Area|![](assets/documentation/images/cards-easy.png)![](assets/documentation/images/cards-hard.png) |Allows the user to easily navigate to the game page.
-|Score Tracking|![](assets/documentation/images/score-easy.png)![](assets/documentation/images/score-hard.png) |Allows the user to easily navigate to the game page.
-|Exit Game Button|![](assets/documentation/images/Exit.png) |Allows the user to easily navigate to the game page.
-|Leaderboard|![](assets/documentation/images/leaderboard.png) |Allows the user to easily navigate to the game page.
-|New Game Button|![](assets/documentation/images/new-game.png) |Allows the user to easily navigate to the game page.
-|Try Again Button|![](assets/documentation/images/try-again.png) |Allows the user to easily navigate to the game page.
-|Settings Only Home Screen|![](assets/documentation/images/settings-only.png) |Allows the user to easily navigate to the game page.
+|Start Button|![](assets/documentation/images/start.png) |Loads the game page and hides the home page. Allows the user to easily navigate to the game page and is clear and obvious.
+|Cards Area|![](assets/documentation/images/cards-easy.png)![](assets/documentation/images/cards-hard.png) |The cards to be turned over during the game. Allows the user to intuitively play the game as if they were turning cards over, while keeping track of already matched pairs and how many left to find. Changes between 12 and 20 cards depending on difficulty, allowing the user to visually appreciate the change in difficulty.
+|Score Tracking|![](assets/documentation/images/score-easy.png)![](assets/documentation/images/score-hard.png) |Shows how many items are left to find and how many attempts left the user has. Lets the user keep track of their progess in the game. Changes between 6 and 10 items and 25 and 35 initial attempts depending on difficulty, allowing the user to visullay appreciate the change in difficulty.
+|Exit Game Button|![](assets/documentation/images/Exit.png) |Hides the game page and displays the home page. Allows the user to easily navigate through the site.
+|Leaderboard|![](assets/documentation/images/leaderboard.png) |Displays the top 3 scores of those who entered a username. Allows the user to compare their scores to others and personalise the game.
+|New Game Button|![](assets/documentation/images/new-game.png) |If the user completes the game, a button with 'Play Again?' appears, taking the user back to a reduced version of the home page (see below). Allows the user so smoothly navigate the site.
+|Try Again Button|![](assets/documentation/images/try-again.png) |If the user loses the game, a button with 'Try Again' appears, taking the user back to a reduced version of the home page (see below). Allows the user to smoothly navigate the site.
+|Settings Only Home Screen|![](assets/documentation/images/settings-only.png) |A reduced version of the home screen, showing only the username input, difficulty switch and start game button. This is more convenient to the user to reload a new game rather than returning to the full home screen and navigating to the bottom.
 ### Media Queries ###
 
 ## Future Features
