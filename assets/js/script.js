@@ -233,7 +233,7 @@ document.addEventListener("DOMContentLoaded", function() {
             //Only let the user click if attempts are left
             if (attemptsLeft>0){
             //Only let the user click on a card if it hasn't been turned over//
-            if (card.innerHTML==='<i class="fa-2xl fa-solid fa-question"></i>'){
+            if (card.innerHTML==='<i class="fa-2xl fa-solid fa-question" aria-hidden="true"></i>'){
             //If less than two cards are currently chosen//
             if (inputId.length<2){
                //store id//
