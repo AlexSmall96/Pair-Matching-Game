@@ -1,4 +1,5 @@
 document.addEventListener("DOMContentLoaded", function() {
+    console.log("new")
     //Declare Variables//
     //
     //Declare variables required for loading game
@@ -317,7 +318,7 @@ document.addEventListener("DOMContentLoaded", function() {
                         });
                   } else if (attemptsLeft>0){
                     //Let button appear to guess again//
-                    promptArea.innerHTML='<button id="guess-again">Incorrect. Ready to turn cards over?</button>';
+                    promptArea.innerHTML='<button id="guess-again">Incorrect. Click to turn cards over.</button>';
                     let guessAgain=document.getElementById('guess-again');
                     guessAgain.addEventListener('click',function(){
                         //Check if two cards have been selected//
