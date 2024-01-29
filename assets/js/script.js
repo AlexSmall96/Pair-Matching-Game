@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", function() {
-    //Declare Variables//
+    //Declare Variables
     //
     //Declare variables required for loading game
     let difficulty='easy';
@@ -137,6 +137,7 @@ document.addEventListener("DOMContentLoaded", function() {
         instructions.style.display='block';
         });
 
+    //Add event listener to username input
     usernameInput.addEventListener("change", function(){
         if (usernameInput.value != ""){
             playButton.disabled = false;
@@ -196,7 +197,7 @@ document.addEventListener("DOMContentLoaded", function() {
     //Show game page and hide home page
     gamePage.style.display='block';
     homePage.style.display='none';
-    //Shuffle keys into new array//
+    //Shuffle keys into new array
     let shuffledKeys=[];
     let noKeys=keys.length;
     let noKeysRemaining=noKeys;
@@ -207,7 +208,7 @@ document.addEventListener("DOMContentLoaded", function() {
         keys.splice(randIndex,1);
         noKeysRemaining--;
     }
-    //Overwrite keys with new order//
+    //Overwrite keys with new order
     keys=shuffledKeys;
     let cardNo=0;
     let oldId;
@@ -218,7 +219,7 @@ document.addEventListener("DOMContentLoaded", function() {
         card.innerHTML=`<i class="fa-2xl fa-solid fa-question"></i>`;
         //Save old Id
         oldId=card.id;
-        //Shuffle cards using shuffled key values//
+        //Shuffle cards using shuffled key values
         card.id=items[keys[cardNo]];
         cardNo++;
         //Reset found items
@@ -234,18 +235,18 @@ document.addEventListener("DOMContentLoaded", function() {
         itemsFound=0;
         promptArea.innerHTML=`<p>Pick a Card!</p>`;
         username=document.getElementById('username').value;
-     //Add event listeners to cards//    
+     //Add event listeners to cards
     for (let card of cards){
         card.addEventListener('click', function(){
             //Only let the user click if attempts are left
             if (attemptsLeft>0){
-            //Only let the user click on a card if it hasn't been turned over//
+            //Only let the user click on a card if it hasn't been turned over
             if (card.innerHTML==='<i class="fa-2xl fa-solid fa-question" aria-hidden="true"></i>'){
             //If less than two cards are currently chosen//
             if (inputId.length<2){
                //store id//
                let item=this.id;
-               //store item name without unique number on end//
+               //store item name without unique number on end
                let itemName=item.slice(0,item.length-2);
                //Turn card over to show item//
                card.innerHTML=`<i class="fa-2xl fa-solid fa-${itemName}"></i>`;
@@ -256,13 +257,13 @@ document.addEventListener("DOMContentLoaded", function() {
                   attemptsLeft -=1;
                   document.getElementById('attempts-left').innerHTML =attemptsLeft;
                   if (inputName[0]===inputName[1]){
-                  //Add item to found items//
+                  //Add item to found items
                   document.getElementById('attempts-left').innerHTML =attemptsLeft;
                   let foundItem = document.getElementById(`found-${itemName}`);
                   foundItem.innerHTML=`<i class="fa-2xl fa-solid fa-${itemName}"></i>`;
                   //Increase score
                   itemsFound++;
-                  //Show well done message and make new game button appear//
+                  //Show well done message and make new game button appear
                   if (noItems-itemsFound>1){
                     promptArea.innerHTML=`<p>Well done! ${noItems-itemsFound} items left to find.</p>`;
                   } else if (noItems-itemsFound==1){
@@ -323,13 +324,13 @@ document.addEventListener("DOMContentLoaded", function() {
                         instructions.style.display='none';
                         });
                   } else if (attemptsLeft>0){
-                    //Let button appear to guess again//
+                    //Let button appear to guess again
                     promptArea.innerHTML='<button id="guess-again">Incorrect. Click to turn cards over.</button>';
                     let guessAgain=document.getElementById('guess-again');
                     guessAgain.addEventListener('click',function(){
-                        //Check if two cards have been selected//
+                        //Check if two cards have been selected
                         if (inputId.length ===2){
-                            //Check if cards dont match//
+                            //Check if cards dont match
                             if (inputName[0]!==inputName[1]){
                                 //Turn cards back over//
                                 document.getElementById(inputId[0]).innerHTML=
@@ -341,7 +342,7 @@ document.addEventListener("DOMContentLoaded", function() {
                         //Reset input variables
                         inputId=[];
                         inputName=[];
-                        //Make button dissapear after it is clicked//
+                        //Make button dissapear after it is clicked
                         promptArea.innerHTML='<p></p>';
                     });
                   }
