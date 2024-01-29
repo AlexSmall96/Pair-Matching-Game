@@ -1,5 +1,4 @@
 document.addEventListener("DOMContentLoaded", function() {
-    console.log("new")
     //Declare Variables//
     //
     //Declare variables required for loading game
@@ -17,6 +16,7 @@ document.addEventListener("DOMContentLoaded", function() {
     const promptArea=document.getElementById('prompt-area');
     const playButton = document.getElementById("new-game");
     const exitButton = document.getElementById("exit-game");
+    const usernameInput = document.getElementById("username")
     const instructions = document.getElementById('instructions');
     const about = document.getElementById('about');
     //Declare variables that change with difficulty
@@ -137,7 +137,13 @@ document.addEventListener("DOMContentLoaded", function() {
         instructions.style.display='block';
         });
 
-    
+    usernameInput.addEventListener("change", function(){
+        if (usernameInput.value != ""){
+            playButton.disabled = false;
+        } else {
+            playButton.disabled = true;
+        }
+    });
 
      //Add event listener to play button
     playButton.addEventListener("click", function(){
